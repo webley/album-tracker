@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace AlbumTracker.DomainModel.Query
+﻿namespace AlbumTracker.ApiModel.Response
 {
-    public class AlbumArt
+    public class AlbumArtResponse
     {
         public long Id { get; set; }
         public int Width { get; set; }

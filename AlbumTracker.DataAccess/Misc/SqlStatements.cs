@@ -1,10 +1,11 @@
 ﻿namespace AlbumTracker.DataAccess.Misc
 {
-    public class SqlStatements
+    public static class SqlStatements
     {
         #region Selects
 
         public const string SelectArtist = "SELECT Id, Name, Country FROM Artist WHERE Id = @id";
+        public const string SelectArtistByName = "SELECT Id, Name, Country FROM Artist WHERE Name = @name";
         public const string SelectAlbumArt = "SELECT Id, Width, Height, FileName FROM AlbumArt WHERE Id = @id";
         public const string SelectAlbum = "SELECT Id, ArtistId, AlbumArtId, Name, ReleaseDate FROM Album WHERE Id = @id";
         public const string SelectAlbumTrack = "SELECT Id, AlbumId, TrackNumber, Name, DurationMs FROM AlbumTrack WHERE Id = @id";

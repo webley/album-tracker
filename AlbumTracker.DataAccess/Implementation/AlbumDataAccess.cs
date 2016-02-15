@@ -44,7 +44,7 @@ namespace AlbumTracker.DataAccess.Implementation
                 cmd = new CommandDefinition(SqlStatements.SelectAlbumTracksByAlbum, new { albumId = albumId });
                 var tracks = await connection.QueryAsync<AlbumTrack>(cmd);
                 var trackList = tracks.OrderBy(track => track.TrackNumber)
-                    .Select(track => new Track { Name = track.Name, DuationMs = track.LengthInMs })
+                    .Select(track => new Track { Id = track.Id, Name = track.Name, DuationMs = track.LengthInMs })
                     .ToList();
 
                 albumAggregate.TrackList = trackList;

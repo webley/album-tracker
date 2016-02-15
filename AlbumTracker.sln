@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbumTracker.DomainModel", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{170C793E-EC1D-4A89-A6EA-1AEE6391647A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbumTracker.ApiModel", "AlbumTracker.ApiModel\AlbumTracker.ApiModel.csproj", "{20BB5FBD-D384-4270-B806-518121C2E083}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbumTracker.WebApi", "AlbumTracker.WebApi\AlbumTracker.WebApi.csproj", "{76BBE71F-6F02-47AF-9CD4-6AEF1CF6A81C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{170C793E-EC1D-4A89-A6EA-1AEE6391647A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{170C793E-EC1D-4A89-A6EA-1AEE6391647A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{170C793E-EC1D-4A89-A6EA-1AEE6391647A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20BB5FBD-D384-4270-B806-518121C2E083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20BB5FBD-D384-4270-B806-518121C2E083}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20BB5FBD-D384-4270-B806-518121C2E083}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20BB5FBD-D384-4270-B806-518121C2E083}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76BBE71F-6F02-47AF-9CD4-6AEF1CF6A81C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76BBE71F-6F02-47AF-9CD4-6AEF1CF6A81C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76BBE71F-6F02-47AF-9CD4-6AEF1CF6A81C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76BBE71F-6F02-47AF-9CD4-6AEF1CF6A81C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
