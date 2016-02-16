@@ -1,0 +1,155 @@
+<div ng-if="ctrl.showToolbar" layout="row" layout-sm="column" class="documents-toolbar md-whiteframe-z2 pst-white-content"
+     layout-align="space-between center"
+     layout-align-sm="center start">
+    <span flex="auto">
+        {{ctrl.pageFirstIndex()}} - {{ctrl.pageLastIndex()}} of {{ctrl.totalHits }} matches
+    </span>
+
+    <div flex="auto" layout="row" layout-align="end center" class="documents-toolbar-filter-area">
+        <md-menu ng-if="ctrl.createNewFolderCallback || ctrl.linkDocumentCallback">
+            <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" id="pst-new-task-button" aria-label="New Task">
+                <md-tooltip>{{'Link new item' | translate}}</md-tooltip>
+                <!--<md-icon md-svg-icon="av:playlist_add"></md-icon>-->
+                <md-icon class="fa fa-fw" md-font-icon="fa-link"></md-icon>
+            </md-button>
+            <md-menu-content>
+                <md-menu-item ng-if="ctrl.createNewFolderCallback">
+                    <md-icon class="fa fa-fw" md-font-icon="fa-folder-o"></md-icon>
+                    <md-button translate aria-label="{{'Add folder' | translate}}"
+                               title="{{'Add folder' | translate}}"
+                               ng-click="ctrl.createNewFolder($event);">
+                        Add folder
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item ng-if="ctrl.linkDocumentCallback">
+                    <md-icon class="fa fa-fw" md-font-icon="fa-file-o"></md-icon>
+                    <md-button translate ng-click="ctrl.linkDocument($event);">
+                        Link document
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+        <md-menu ng-if="(ctrl.shareFolderCallback || ctrl.pasteCallback) && (ctrl.canShareFolder || ctrl.canPasteShared)">
+            <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" id="share-button" aria-label="{{'Share' | translate}}">
+                <md-tooltip>{{'Share' | translate}}</md-tooltip>
+                <md-icon class="fa fa-fw" md-font-icon="fa-share-square"></md-icon>
+            </md-button>
+            <md-menu-content>
+                <md-menu-item ng-if="ctrl.shareFolderCallback" ng-disabled="!ctrl.canShareFolder">
+                    <md-icon class="fa fa-fw" md-font-icon="fa-copy"></md-icon>
+                    <md-button translate aria-label="{{'Share folder' | translate}}"
+                               title="{{'Share folder' | translate}}"
+                               ng-click="ctrl.shareFolder($event);"
+                               ng-disabled="!ctrl.canShareFolder">
+                        Share folder
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item ng-if="ctrl.pasteSharedCallback" ng-disabled="!ctrl.canPasteShared">
+                    <md-icon class="fa fa-fw" md-font-icon="fa-paste"></md-icon>
+                    <md-button translate ng-click="ctrl.pasteShared($event);"
+                               ng-disabled="!ctrl.canPasteShared">
+                        Link shared folder/document
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+        <md-menu>
+            <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" id="view-button" aria-label="{{'View' | translate}}">
+                <md-tooltip>{{'View' | translate}}</md-tooltip>
+                <md-icon class="fa fa-fw" md-font-icon="fa-eye"></md-icon>
+            </md-button>
+            <md-menu-content layout-padding="">
+                <md-menu-item>
+                    <md-checkbox flex
+                                 ng-model="ctrl.showFolders"
+                                 ng-change="ctrl.showFoldersChanged()">
+                        {{ 'Folders' | translate}}
+                    </md-checkbox>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-checkbox flex
+                                 ng-model="ctrl.showDocuments"
+                                 ng-change="ctrl.showDocumentsChanged()">
+                        {{ 'Documents' | translate}}
+                    </md-checkbox>
+                </md-menu-item>
+                <md-menu-item ng-if="ctrl.showSharesFilter" >
+                    <md-checkbox flex
+                                 ng-model="ctrl.showShares"
+
+                                 ng-change="ctrl.showSharesChanged()">
+                        {{ 'Shares' | translate}}
+                    </md-checkbox>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
+</div>
+
+<md-grid-list md-cols-sm="1"
+              md-cols-md="3"
+              md-cols-lg="4"
+              md-cols-gt-lg="5"
+              md-row-height="40px"
+              md-gutter="12px"
+              md-gutter-gt-sm="8px">
+
+    <md-grid-tile class="" ng-repeat="folder in ctrl.folderItems | orderBy:'title'" md-rowspan="1" md-colspan="1">
+        <div layout="column" flex class="md-whiteframe-z1 folder-tile tile-content">
+            <a flex ng-href="{{::ctrl.getLinkUrl(folder)}}" layout="row">
+
+                <div class="folder-tile-item" layout="column" layout-align="center start" layout-margin>
+                    <md-icon class="fa fa-fw" md-font-icon="fa-folder-open"></md-icon>
+                </div>
+                <div class="folder-tile-title-container" flex layout="column" layout-align="center start">
+                    <div class="folder-tile-title">
+                        {{::folder.title}}
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </md-grid-tile>
+
+</md-grid-list>
+
+<div layout-margin></div>
+
+<md-grid-list md-cols-sm="1"
+              md-cols-md="3"
+              md-cols-lg="4"
+              md-cols-gt-lg="5"
+              md-row-height="200px"
+              md-gutter="12px"
+              md-gutter-gt-sm="8px">
+    <md-grid-tile ng-repeat="document in ctrl.documentItems track by document.id | orderBy:'title'" md-rowspan="1" md-colspan="1">
+        <div layout="column" flex class="md-whiteframe-z1 document-tile tile-content">
+            <div class="folder-tile-header" layout-padding>
+                <div flex class="folder-tile-title">
+                    {{::document.title}}
+                </div>
+            </div>
+            <div flex layout="row" class="document-tile-item">
+                <md-icon flex class="fa fa-fw" pst-file-icon-class-selector="{{document.fileName}}"></md-icon>
+            </div>
+            <div class="folder-tile-footer">
+                <md-button class="md-icon-button"
+                           ng-href="{{ctrl.getFileDownloadUrl(document.fileId)}}"
+                           aria-label="{{'Download' | translate}}">
+                    <md-icon md-svg-icon="file:file_download"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="{{'View history' | translate}}"
+                           ui-sref="document_update({topicCode: document.topicCode, id: document.id})">
+                    <md-icon md-svg-icon="action:description"></md-icon>
+                </md-button>
+            </div>
+        </div>
+    </md-grid-tile>
+</md-grid-list>
+
+<pst-pager flex layout="row" layout-align="center center" layout-margin
+           ng-if="ctrl.showPager"
+           pst-page="ctrl.page"
+           pst-page-size="ctrl.pageSize"
+           pst-last-page="ctrl.lastPage()">
+</pst-pager>

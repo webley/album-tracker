@@ -16,7 +16,7 @@ namespace AlbumTracker.WebApi
                 Artist = album.Artist.ToArtistResponse(),
                 AlbumArt = album.AlbumArt.ToAlbumArtResponse(),
                 Name = album.Name,
-                Year = album.ReleaseDate,
+                ReleaseDate = album.ReleaseDate,
                 TrackList = album.TrackList.ToTrackListResponse()
             };
         }

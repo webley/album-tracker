@@ -1,0 +1,275 @@
+[
+    {
+        "source": "./vendor/bower_components/jquery",
+        "inject": [
+            "dist/jquery.min.js"
+        ],
+        "debug-inject": [
+            "dist/jquery.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/moment",
+        "inject": [
+            "moment.js"
+        ],
+        "debug-inject": [
+            "min/moment.min.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/angular",
+        "inject": [
+            "angular.min.js",
+            "angular-csp.css"
+        ],
+        "debug-inject": [
+            "angular.js",
+            "angular-csp.css"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/angular-ui-router",
+        "inject": [
+            "release/angular-ui-router.min.js"
+        ],
+        "debug-inject": [
+            "release/angular-ui-router.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/angular-gettext",
+        "inject": [
+            "dist/angular-gettext.min.js"
+        ],
+        "debug-inject": [
+            "dist/angular-gettext.js"
+        ]
+    },
+    {
+        "source": "./vendor/other_vendor/gettext-global-marker",
+        "inject": [
+            "gettext-global-marker.js"
+        ],
+        "debug-inject": [
+            "gettext-global-marker.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/showdown",
+        "inject": [
+            "dist/showdown.min.js"
+        ],
+        "debug-inject": [
+            "dist/showdown.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/ng-showdown",
+        "inject": [
+            "dist/ng-showdown.min.js"
+        ],
+        "debug-inject": [
+            "dist/ng-showdown.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/angular-sanitize",
+        "inject": [
+            "angular-sanitize.min.js"
+        ],
+        "debug-inject": [
+            "angular-sanitize.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/angular-i18n",
+        "inject": [
+            "angular-locale_en-gb.js"
+        ],
+        "debug-inject": [
+            "angular-locale_en-gb.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/signalr",
+        "inject": [
+            "jquery.signalR.min.js"
+        ],
+        "debug-inject": [
+            "jquery.signalR.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/angular-dynamic-locale",
+        "inject": [
+            "tmhDynamicLocale.min.js"
+        ],
+        "debug-inject": [
+            "src/tmhDynamicLocale.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/timezone-js",
+        "inject": [
+            "src/date.js"
+        ],
+        "debug-inject": [
+            "src/date.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/angular-animate",
+        "inject": [
+            "angular-animate.min.js"
+        ],
+        "debug-inject": [
+            "angular-animate.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/angular-cookies",
+        "inject": [
+            "angular-cookies.min.js"
+        ],
+        "debug-inject": [
+            "angular-cookies.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/font-awesome/css",
+        "inject": [
+            "font-awesome.min.css"
+        ],
+        "debug-inject": [
+            "font-awesome.css"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/angular-messages",
+        "inject": [
+            "angular-messages.min.js"
+        ],
+        "debug-inject": [
+            "angular-messages.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/angular-aria",
+        "inject": [
+            "angular-aria.min.js"
+        ],
+        "debug-inject": [
+            "angular-aria.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/angular-material",
+        "inject": [
+            "angular-material.min.css",
+            "angular-material.min.js"
+        ],
+        "debug-inject": [
+            "angular-material.css",
+            "angular-material.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/underscore",
+        "inject": [
+            "underscore-min.js"
+        ],
+        "debug-inject": [
+            "underscore.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/underscore.string/dist",
+        "inject": [
+            "underscore.string.min.js"
+        ],
+        "debug-inject": [
+            "underscore.string.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/angular-ui-calendar",
+        "inject": [
+            "calendar.min.js"
+        ],
+        "debug-inject": [
+            "src/calendar.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/fullcalendar/dist",
+        "inject": [
+            "fullcalendar.min.js",
+            "gcal.js",
+            "fullcalendar.min.css"
+        ],
+        "debug-inject": [
+            "fullcalendar.js",
+            "gcal.js",
+            "fullcalendar.css"
+        ]
+    },
+    {
+        "source": "./vendor/other_vendor/highlightjs",
+        "inject": [
+            "highlight.pack.js"
+        ],
+        "debug-inject": [
+            "highlight.pack.js"
+        ]
+    },
+    {
+        "source": "./vendor/other_vendor/dal",
+        "inject": [
+            "**/*.js"
+        ],
+        "debug-inject": [
+            "**/*.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/sc-date-time",
+        "inject": [
+            "dist/sc-date-time.js",
+            "dist/sc-date-time.css"
+        ],
+        "debug-inject": [
+            "dist/sc-date-time.js",
+            "dist/sc-date-time.css"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/Chart.js",
+        "inject": [
+            "Chart.min.js"
+        ],
+        "debug-inject": [
+            "Chart.js"
+        ]
+    },
+    {
+        "source": "./vendor/bower_components/angular-chart.js",
+        "inject": [
+            "dist/angular-chart.min.js",
+            "dist/angular-chart.css"
+        ],
+        "debug-inject": [
+            "angular-chart.js",
+            "dist/angular-chart.css"
+        ]
+    },
+    {
+        "source": "./vendor/other_vendor/fonts",
+        "inject": [
+            "/roboto.css"
+        ],
+        "debug-inject": [
+            "/roboto.css"
+        ]
+    }
+]

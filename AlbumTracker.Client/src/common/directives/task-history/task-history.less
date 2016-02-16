@@ -1,0 +1,80 @@
+@import "../../../less/variables.less";
+
+.task-history {
+    text-wrap: none;
+    overflow-x: hidden;
+    .originator {
+        font-size: 16px;
+        margin: 0 0;
+    }
+}
+
+.reply-block {
+	padding: 16px;
+
+    .pst-task-reply {
+        margin: 24px
+    }
+
+    .pst-task-reply.ng-enter {
+        -webkit-transition: 1s;
+        transition: 1s;
+        transform: translate(100%, 0%);
+    }
+
+    .pst-task-reply.ng-enter-active {
+        transform: translate(0%, 0%);
+    }
+
+    .reply-number {
+        color: white;
+        background-color: rgb(68,138,255);
+        vertical-align: top;
+        text-align: center;
+        font-size: 14px;
+        border-radius: 12%;
+        padding: 1px 5px 1px 5px;
+        margin-right: 10px;
+    }
+
+    .reply-body {
+        overflow: hidden;
+        font-size: 14px;
+        line-height: 20px;
+        padding:0; //cancel md-card-content padding
+
+        .reply-header {
+            padding: 10px 16px;
+            background-color: rgb(247, 247, 247);
+            border-bottom: solid 1px rgb(238, 238, 238);
+
+            .reply-contributor {
+                font-size: 13px;
+                color: rgb(85, 85, 85);
+                font-weight: 600;
+            }
+
+            .date-stamp {
+                font-size: 13px;
+                margin-left: 6px;
+                color: @text-dark-secondary;
+            }
+        }
+
+        .reply-text-markdown {
+            padding: 0 16px 0 16px;
+        }
+
+        .reply-text-plain {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 13px;
+            font-weight: 300;
+            padding: 0 16px 0 16px;
+
+            p {
+                white-space: pre-line;
+				        word-wrap: break-word;
+            }
+        }
+    }
+}

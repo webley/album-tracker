@@ -1,0 +1,27 @@
+<md-grid-tile md-rowspan="1" md-colspan="1">
+    <div layout="column" flex class="md-whiteframe-z1 folder-tile-content">
+        <div class="folder-tile-header" layout-padding>
+            <div flex class="folder-tile-title">
+                {{::ctrl.session.file.name | stringLength:30:true}}
+            </div>
+            <md-tooltip class="pst-file-list-tooltip" ng-if="::ctrl.session.file.name.length > 30">{{::ctrl.session.file.name}}</md-tooltip>
+            <md-button class="md-icon-button">
+                <md-icon md-svg-icon="navigation:close"></md-icon>
+                <md-tooltip class="pst-file-list-tooltip">{{'Remove file' | translate}}</md-tooltip>
+            </md-button>
+        </div>
+        <div flex layout="row">
+            <md-icon flex class="md-primary" md-svg-icon="content:link"></md-icon>
+        </div>
+        <div class="folder-tile-footer" layout="row">
+            <div class="upload-progress-control" ng-show="ctrl.session.progress < 100" flex layout="row" layout-align="end start">
+                <md-progress-linear class="md-accent"
+                                    md-mode="determinate"
+                                    value="{{ctrl.session.progress}}"></md-progress-linear>
+            </div>
+            <div ng-show="ctrl.session.progress === 100">
+                {{'Upload complete' | translate}}
+            </div>
+        </div>
+    </div>
+</md-grid-tile>

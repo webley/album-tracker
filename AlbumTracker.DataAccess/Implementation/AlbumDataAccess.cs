@@ -41,10 +41,13 @@ namespace AlbumTracker.DataAccess.Implementation
                 var albums = await connection.QueryAsync<Album, Artist, AlbumArt, Album>(cmd, (album, artist, art) => { album.Artist = artist; album.AlbumArt = art; return album; });
                 albumAggregate = albums.FirstOrDefault();
 
+                if (albumAggregate == null)
+                    return null;
+
                 cmd = new CommandDefinition(SqlStatements.SelectAlbumTracksByAlbum, new { albumId = albumId });
                 var tracks = await connection.QueryAsync<AlbumTrack>(cmd);
                 var trackList = tracks.OrderBy(track => track.TrackNumber)
-                    .Select(track => new Track { Id = track.Id, Name = track.Name, DuationMs = track.LengthInMs })
+                    .Select(track => new Track { Id = track.Id, Name = track.Name, DuationMs = track.DurationMs })
                     .ToList();
 
                 albumAggregate.TrackList = trackList;

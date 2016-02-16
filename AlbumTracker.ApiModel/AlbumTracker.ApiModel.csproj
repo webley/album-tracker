@@ -42,10 +42,12 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request\CreateAlbumRequest.cs" />
+    <Compile Include="Request\CreateArtistRequest.cs" />
     <Compile Include="Response\AlbumArtResponse.cs" />
     <Compile Include="Response\AlbumResponse.cs" />
     <Compile Include="Response\ArtistResponse.cs" />
     <Compile Include="Response\TrackResponse.cs" />
+    <Compile Include="Types\AlbumTrack.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

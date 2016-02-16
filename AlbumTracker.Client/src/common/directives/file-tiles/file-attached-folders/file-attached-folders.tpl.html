@@ -1,0 +1,39 @@
+<md-grid-tile ng-class="{'file-tile-removed':folder.removed===true}"
+              class="file-tile"
+              ng-repeat="folder in fileAttachedFolders.viewModel.documents.attachedDocumentFolders | orderBy: 'title'"
+              md-rowspan="1"
+              md-colspan="1">
+    <div layout="column" flex class="md-whiteframe-z1 tile-content">
+        <div class="file-tile-header" layout="row">
+            <div flex layout-padding>
+                <div flex class="file-tile-title">
+                    {{::folder.title}}
+                </div>
+                <md-tooltip class="pst-file-list-tooltip">{{::folder.title}}</md-tooltip>
+            </div>
+            <md-button ng-if="!folder.removed"
+                       ng-click="fileAttachedFolders.detachDocFolder(folder)"
+                       class="md-icon-button file-tile-button-right"
+                       aria-label="Detach document task">
+                <md-icon md-svg-icon="navigation:close"></md-icon>
+                <md-tooltip class="pst-file-list-tooltip">{{'Detach document folder' | translate}}</md-tooltip>
+            </md-button>
+            <md-button ng-if="folder.removed"
+                       ng-click="fileAttachedFolders.attachDocFolder(folder)"
+                       class="md-icon-button file-tile-button-right"
+                       aria-label="Reattach document task">
+                <md-icon md-svg-icon="content:redo"></md-icon>
+                <md-tooltip class="pst-file-list-tooltip">{{'Reattach document folder' | translate}}</md-tooltip>
+            </md-button>
+        </div>
+        <div flex layout="row" class="file-tile-content">
+            <md-icon flex class="md-primary" md-svg-icon="file:folder"></md-icon>
+        </div>
+        <div class="folder-tile-footer" layout="row">
+            <md-button class="md-icon-button" ui-sref="folders({topicCode: folder.topicCode, id: folder.id})">
+                <md-icon md-svg-icon="action:description"></md-icon>
+                <md-tooltip class="pst-file-list-tooltip">{{'Visit document folder' | translate}}</md-tooltip>
+            </md-button>
+        </div>
+    </div>
+</md-grid-tile>

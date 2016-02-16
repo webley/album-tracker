@@ -1,0 +1,115 @@
+@import '../../less/variables.less';
+
+.md-chips .md-chip-input-container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 350px;
+}
+
+.autocomplete-result {
+    @media @break-sm {
+        font-size: 13px;
+    }
+}
+
+.task-autocomplete-title, .topic-autocomplete-title, .user-autocomplete-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+.pst-icon-chips {
+    .md-chip {
+        /*padding: 0;
+        margin:0;*/
+        padding-left: 0px;
+        margin-right: 8px;
+        margin-top: 12px;
+        margin-bottom: 0px;
+        display: inline-flex;
+        height: 26px;
+        line-height: 25px;
+
+        md-chip-template {
+            display: inline-flex;
+        }
+
+        .pst-chip-icon {
+            height: 24px;
+            width: 24px;
+            text-align: center;
+            border-radius: 12px;
+            background-color: #f5f5f5;
+            color: #555555;
+            float: left;
+            font-size: 16px;
+            line-height: 24px;
+            border: 1px solid rgb(224, 224, 224);
+
+            //User type
+            .fa-user {
+                color: @icon-colour-dashboard;
+            }
+            .fa-users {
+                color: @icon-colour-projects;
+            }
+            .fa-user-secret {
+                color: @icon-colour-supplychain;
+            }
+
+            //Task type
+            .fa-list-alt {
+                color: @icon-colour-tasks;
+            }
+            .fa-sitemap {
+                color: @icon-colour-projects;
+            }
+            .fa-archive {
+                color: @icon-colour-supplychain;
+            }
+            .fa-file {
+                color: @icon-colour-documents;
+            }
+            .fa-folder {
+                color: @icon-colour-folders;
+            }
+            .fa-calendar {
+                color: @icon-colour-meetings;
+            }
+
+            //Topic type
+            .fa-files-o {
+                color: @icon-colour-documents;
+            }
+        }
+
+        .md-chip-remove-container {
+            position: absolute;
+            top: -4px;
+            right: -2px;
+            color: white;
+            fill: white;
+        }
+
+        &.md-focused {
+            .pst-chip-icon {
+                background-color: #7986cb;
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            a {
+                color: rgba(255, 255, 255, 0.8);
+                text-decoration: underline;
+
+                &:hover {
+                    color: rgba(255, 255, 255, 0.5);
+                }
+            }
+        }
+        .pst-chip-text {
+            margin-left: 8px;
+            font-size: 13px;
+        }
+    }
+}

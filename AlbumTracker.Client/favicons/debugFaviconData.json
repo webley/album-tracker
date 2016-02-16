@@ -1,0 +1,47 @@
+{
+    "result": {
+        "status": "success"
+    },
+    "favicon": {
+        "package_url": "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/favicons.zip",
+        "files_urls": [
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/android-chrome-144x144.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/android-chrome-192x192.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/android-chrome-36x36.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/android-chrome-48x48.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/android-chrome-72x72.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/android-chrome-96x96.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/apple-touch-icon-114x114.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/apple-touch-icon-120x120.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/apple-touch-icon-144x144.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/apple-touch-icon-152x152.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/apple-touch-icon-180x180.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/apple-touch-icon-57x57.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/apple-touch-icon-60x60.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/apple-touch-icon-72x72.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/apple-touch-icon-76x76.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/apple-touch-icon-precomposed.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/apple-touch-icon.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/browserconfig.xml",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/favicon-16x16.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/favicon-32x32.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/favicon-96x96.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/favicon.ico",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/manifest.json",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/mstile-144x144.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/mstile-150x150.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/mstile-310x150.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/mstile-310x310.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/mstile-70x70.png",
+            "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/package_files/safari-pinned-tab.svg"
+        ],
+        "html_code": "<link rel=\"apple-touch-icon\" sizes=\"57x57\" href=\"favicons/apple-touch-icon-57x57.png?ver=7041.416270658374\">\n<link rel=\"apple-touch-icon\" sizes=\"60x60\" href=\"favicons/apple-touch-icon-60x60.png?ver=7041.416270658374\">\n<link rel=\"apple-touch-icon\" sizes=\"72x72\" href=\"favicons/apple-touch-icon-72x72.png?ver=7041.416270658374\">\n<link rel=\"apple-touch-icon\" sizes=\"76x76\" href=\"favicons/apple-touch-icon-76x76.png?ver=7041.416270658374\">\n<link rel=\"apple-touch-icon\" sizes=\"114x114\" href=\"favicons/apple-touch-icon-114x114.png?ver=7041.416270658374\">\n<link rel=\"apple-touch-icon\" sizes=\"120x120\" href=\"favicons/apple-touch-icon-120x120.png?ver=7041.416270658374\">\n<link rel=\"apple-touch-icon\" sizes=\"144x144\" href=\"favicons/apple-touch-icon-144x144.png?ver=7041.416270658374\">\n<link rel=\"apple-touch-icon\" sizes=\"152x152\" href=\"favicons/apple-touch-icon-152x152.png?ver=7041.416270658374\">\n<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"favicons/apple-touch-icon-180x180.png?ver=7041.416270658374\">\n<link rel=\"icon\" type=\"image/png\" href=\"favicons/favicon-32x32.png?ver=7041.416270658374\" sizes=\"32x32\">\n<link rel=\"icon\" type=\"image/png\" href=\"favicons/android-chrome-192x192.png?ver=7041.416270658374\" sizes=\"192x192\">\n<link rel=\"icon\" type=\"image/png\" href=\"favicons/favicon-96x96.png?ver=7041.416270658374\" sizes=\"96x96\">\n<link rel=\"icon\" type=\"image/png\" href=\"favicons/favicon-16x16.png?ver=7041.416270658374\" sizes=\"16x16\">\n<link rel=\"manifest\" href=\"favicons/manifest.json?ver=7041.416270658374\">\n<link rel=\"mask-icon\" href=\"favicons/safari-pinned-tab.svg?ver=7041.416270658374\" color=\"#5bbad5\">\n<link rel=\"shortcut icon\" href=\"favicons/favicon.ico?ver=7041.416270658374\">\n<meta name=\"apple-mobile-web-app-title\" content=\"PS-Team\">\n<meta name=\"application-name\" content=\"PS-Team\">\n<meta name=\"msapplication-TileColor\" content=\"#da532c\">\n<meta name=\"msapplication-TileImage\" content=\"favicons/mstile-144x144.png?ver=7041.416270658374\">\n<meta name=\"msapplication-config\" content=\"favicons/browserconfig.xml?ver=7041.416270658374\">\n<meta name=\"theme-color\" content=\"#ffffff\">",
+        "compression": "true"
+    },
+    "files_location": {
+        "type": "path",
+        "path": "favicons/"
+    },
+    "preview_picture_url": "http://realfavicongenerator.net/files/10a7d4bfc12740fb9a11d12f9dafabb28a6451d3/favicon_preview.png",
+    "version": "0.11"
+}

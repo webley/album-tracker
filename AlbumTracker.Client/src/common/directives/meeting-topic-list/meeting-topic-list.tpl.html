@@ -1,0 +1,14 @@
+<md-list>
+
+    <md-list-item class="md-3-line"-start
+        ng-repeat-start="topic in topics">
+            <md-button class="md-no-style"
+                       ui-sref="topic({topicCode:'{{topic.code}}'})">
+                <b>{{topic.name}}</b><br />{{topic.code}}
+            </md-button>
+    </md-list-item>
+    <br />
+    <br />
+    <br />
+    <md-divider ng-repeat-end></md-divider>
+</md-list>

@@ -1,0 +1,26 @@
+<md-dialog aria-label="{{'Create a meeting' | translate}}" class="pst-new-task-dialog">
+    <form>
+        <md-dialog-content class="md-dialog-content">
+            <div class="task-dialog-title">{{'Create a new meeting' | translate}}</div>
+            <div>
+                <md-autocomplete md-selected-item="ctrl.topic"
+                                 md-search-text="ctrl.searchText"
+                                 md-items="item in ctrl.topicsAutocomplete(ctrl.searchText)"
+                                 md-item-text="item.name + ' (' + item.code + ')'"
+                                 md-autoselect="true"
+                                 md-autofocus="true"
+                                 md-no-cache="true"
+                                 md-floating-label="{{'Select a topic' | translate}}">
+                    <md-item-template>
+                        <span md-highlight-text="searchText">{{item.name}} ({{item.code}})</span>
+                    </md-item-template>
+                    <md-not-found>{{'No matches found' | translate}}</md-not-found>
+                </md-autocomplete>
+            </div>
+        </md-dialog-content>
+        <div class="md-actions" layout="row">
+            <md-button type="button" ng-click="ctrl.cancel()" class="md-warning">{{'Cancel' | translate}}</md-button>
+            <md-button type="submit" ng-disabled="!ctrl.topic" ng-click="ctrl.createTask()" class="md-primary">{{'Create meeting' | translate}}</md-button>
+        </div>
+    </form>
+</md-dialog>

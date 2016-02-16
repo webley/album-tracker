@@ -1,0 +1,24 @@
+
+<md-button class="md-icon-button pst-last-page" md-no-ink aria-label="Last Page" ng-class="{'hidden': ctrl.page < 3}"
+ng-href="{{ctrl.getFirstPageUrl()}}">
+    <md-icon md-svg-icon="navigation:chevron_left"></md-icon>
+    <md-icon md-svg-icon="navigation:chevron_left"></md-icon>
+</md-button>
+
+<md-button class="md-icon-button" md-no-ink aria-label="Previous Page" ng-class="{'hidden': ctrl.page === 1}"
+ng-href="{{ctrl.getPrevPageUrl();}}">
+    <md-icon md-svg-icon="navigation:chevron_left"></md-icon>
+</md-button>
+
+<span class="pst-pager-page-count" translate>Page {{ctrl.page}}</span>
+
+<md-button class="md-icon-button" md-no-ink aria-label="Next Page" ng-class="{'hidden': ctrl.page >= ctrl.lastPage }"
+ng-href="{{ctrl.getNextPageUrl();}}">
+    <md-icon md-svg-icon="navigation:chevron_right"></md-icon>
+</md-button>
+
+<md-button class="md-icon-button pst-last-page" md-no-ink aria-label="Last Page" ng-class="{'hidden': ctrl.page + 1 >= ctrl.lastPage }"
+ng-href="{{ctrl.getLastPageUrl()}}">
+    <md-icon md-svg-icon="navigation:chevron_right"></md-icon>
+    <md-icon md-svg-icon="navigation:chevron_right"></md-icon>
+</md-button>

@@ -1,0 +1,53 @@
+<md-content class="md-whiteframe-z2">
+    <div layout="column" class="pst-agenda-grid">
+        <div class="pst-header-row" layout="row" layout-align="start center">
+            <div ng-repeat="column in ctrl.columns track by $index" ng-class="::ctrl.columnClasses[$index]" flex>
+                <div ng-class="::{'pst-sortable': column.isSortable, 'pst-numerical': column.isNumerical}"
+                     ng-click="::(column.isSortable ? ctrl.sort(column.name) : return)">
+                    <span ng-class="{'pst-active-column': ctrl.sorting.field === column.name}">
+                        <span ng-bind="::column.label"></span>
+                        <md-icon ng-if="::column.isSortable"
+                                 ng-class="{'pst-descending': ctrl.sorting.order === 'desc'}"
+                                 md-svg-icon="navigation:arrow_drop_up"></md-icon>
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+        <md-divider flex></md-divider>
+        <div ng-repeat="agendaItem in ctrl.agenda" ng-class="::ctrl.columnClasses[$index]" flex>
+            <a layout="row" class="pst-agenda-row" pst-topic-sref pst-task-type="meeting" pst-topic-code="{{agendaItem.taskCode.topicCode}}" pst-task-id="{{agendaItem.taskCode.taskId}}">
+                <div ng-class="::ctrl.columnClasses[0]" flex layout="row" class="agenda-item-date" layout-wrap="wrap">
+                    <div class="md-display-2 agenda-item-day" ng-bind="::agendaItem.day"></div>
+                    <div layout="column" layout-align="space-between" class="agenda-item-week-day-month-year">
+                        <div ng-bind="::agendaItem.weekDay"></div>
+                        <div ng-bind="::agendaItem.monthYear"></div>
+                    </div>
+
+
+                </div>
+
+                <div ng-class="::ctrl.columnClasses[1]" class="start-due" flex>
+                    <span ng-if="::agendaItem.allDay" translate>AllDay</span>
+                    <div layout="column" layout-align="space-between start" ng-if="::!agendaItem.allDay" class="time">
+                        <div layout="row" layout-wrap="wrap">
+                            <span  ng-bind="::agendaItem.startTime" layout="row"></span><span ng-if="agendaItem.oneDay">-{{::agendaItem.endTime}}</span>
+                        </div>
+                        <div ng-if="::!agendaItem.oneDay" ng-bind="::agendaItem.endDate">*</div>
+                    </div>
+                </div>
+
+                <div ng-class="::ctrl.columnClasses[2]" flex ng-bind="::agendaItem.event" class="event p{{::agendaItem.priority}}">
+                </div>
+
+            </a>
+            <md-divider flex></md-divider>
+        </div>
+        
+    </div>
+</md-content>
+<div class="pager-row" layout="row" layout-align="end center" >
+    <pst-pager layout="row" layout-margin pst-page="ctrl.page" pst-last-page="ctrl.lastPage"></pst-pager>
+    <pst-page-size-select hide-sm layout="row" layout-align="end center" pst-page-size="ctrl.pageSize"></pst-page-size-select>
+</div>

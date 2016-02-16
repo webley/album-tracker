@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
 using AlbumTracker.ApiModel.Response;
@@ -10,7 +6,6 @@ using AlbumTracker.DataAccess.Interface;
 
 namespace AlbumTracker.WebApi.Controllers
 {
-    [Route("api/albums")]
     public class AlbumsController : ApiController
     {
         private IAlbumDataAccess _albumDataAccess;

@@ -1,0 +1,117 @@
+pst-agenda{
+    
+   
+    .pst-header-row {
+            color: rgba(0, 0, 0, .54);
+            font-size: 12px;
+            font-weight: bold;
+            padding: 0 0 0 24px;
+            height: 48px;
+        div {
+            height:48px;
+            line-height:48px;
+		}
+    }
+    
+    /*.pst-sortable {
+        cursor: pointer;
+        outline: none;
+        .pst-active-column {
+            color: rgba(0, 0, 0, .84);
+            md-icon {
+                fill: currentColor;
+            }
+        }
+        &:hover {
+            md-icon {
+                fill: rgba(0, 0, 0, .26);
+            }
+        }
+        md-icon {
+            fill: transparent;
+            transition: fill .25s, transform .25s;
+            transform: rotate(0deg);
+            &.pst-descending {
+                transform: rotate(180deg);
+            }
+        }
+    }*/
+    .pst-agenda-row {
+            flex-wrap:wrap;
+            color: rgba(0, 0, 0, .54);
+            font-size: 12px;
+            font-weight: bold;
+            padding: 0 0 0 24px;
+            min-height: 50px;
+            color:@text-dark-primary !important;
+            font-weight:normal;
+
+    }
+    
+    .pst-agenda-row .start-due, .pst-agenda-row .event {
+    	padding: 4px 0 0 0px;
+    }
+    .pst-agenda-row:hover .start-due, .pst-agenda-row:hover .event{
+    	background-color:#eeeeee;
+    }
+    .agenda-item-date{
+        flex-wrap:wrap;
+        
+        color:#a8a8a8;
+    }
+    
+    .agenda-item-day{
+        line-height:40px;
+        padding-right: 4px;
+    }
+    
+    
+    .agenda-item-week-day-month-year {
+        height:40px;
+        font-weight:normal;
+    }
+    .pst-header-row 
+    {
+        div {
+            outline:none !important;
+            
+        }
+    }
+    .pst-agenda-row .start-due .time {
+    	height:42px;
+    }
+    
+    .p1, .p2, .p3 {
+        display: inline-block;
+        
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+    }
+    .p1::before, .p2::before, .p3::before {
+        content: "\f111";
+        margin-right:4px;
+        font: normal normal normal 14px/1 FontAwesome;
+    }    
+        
+    .p1::before {
+        color:red;
+    }
+    .p2::before {
+        color:blue;
+    }
+    .p3::before {
+        color:green;
+    }
+    @media (max-width: 599px) {
+        .pst-agenda-row {
+            min-height:100px;
+        }
+    }
+}
+
+ @media (max-width: 599px) {
+    .layout-margin {
+        margin:0px;
+    }
+}

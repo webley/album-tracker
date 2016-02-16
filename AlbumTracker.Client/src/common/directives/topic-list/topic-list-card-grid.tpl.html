@@ -1,0 +1,59 @@
+<div layout="row"
+     layout-wrap
+     layout-align="flex-start">
+
+    <div layout="column"
+         class="md-whiteframe-3dp md-margin md-padding"
+         style="background: white"
+         flex-sm="95"
+         flex-md="45"
+         flex-gt-md="30"
+         ng-repeat="topic in ::topicStatistic track by $index">
+
+        <div layout="column">
+            <md-button class="md-no-style"
+                       ui-sref="topic({topicCode:'{{::topic.topicCode}}'})">
+                <b>{{::topic.topicName}}</b><br />{{::topic.topicCode}}
+            </md-button>
+        </div>
+
+        <div layout="row" layout-wrap layout-fill class="md-actions">
+            <md-button class="md-primary"
+                       ui-sref="topic({topicCode:'{{::topic.topicCode}}', state:'open'})"
+                       ng-if="::(topic.open > 0)">
+                Open: {{::topic.open}}
+            </md-button>
+            <md-button class="md-primary"
+                       ui-sref="topic({topicCode:'{{::topic.topicCode}}', state:'unscheduled'})"
+                       ng-if="::(topic.unscheduled > 0)">
+                Unscheduled: {{::topic.unscheduled}}
+            </md-button>
+            <md-button class="md-primary"
+                       ui-sref="topic({topicCode:'{{::topic.topicCode}}', state:'scheduled'})"
+                       ng-if="::(topic.scheduled > 0)">
+                Scheduled: {{::topic.scheduled}}
+            </md-button>
+            <md-button class="md-primary"
+                       ui-sref="topic({topicCode:'{{::topic.topicCode}}', state:'workInProgress'})"
+                       ng-if="::(topic.workInProgress > 0)">
+                Work in Progress: {{::topic.workInProgress}}
+            </md-button>
+            <md-button class="md-primary"
+                       ui-sref="topic({topicCode:'{{::topic.topicCode}}', state:'review'})"
+                       ng-if="::(topic.review > 0)">
+                Review: {{::topic.review}}
+            </md-button>
+            <md-button class="md-primary"
+                       ui-sref="topic({topicCode:'{{::topic.topicCode}}', state:'complete'})"
+                       ng-if="::(topic.completed > 0)">
+                Complete: {{::topic.completed}}
+            </md-button>
+            <md-button class="md-primary"
+                       ui-sref="topic({topicCode:'{{::topic.topicCode}}', state:'overdue'})"
+                       ng-if="::(topic.overdue > 0)">
+                Overdue: {{::topic.overdue}}
+            </md-button>
+        </div>
+
+    </div>
+</div>

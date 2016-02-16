@@ -1,0 +1,28 @@
+<div class="reply-editor">
+    <div class="reply-editor-content-container">
+        <div class="reply-editor-content">
+            <div class="reply-editor-textarea-container"
+                 ng-show="!ctrl.preview"
+                 ng-class="{'reply-editor-markdown': ctrl.markdown, 'reply-editor-plain': !ctrl.markdown}">
+                <textarea pst-resizeable-textarea
+                          flex
+                          pst-adjust="10"
+                          ng-model="ctrl.replyText"
+                          ng-attr-placeholder="{{'Write reply' | translate }}"
+                          ng-show="!ctrl.preview"
+                          ng-disabled="ctrl.disabled"
+                          ng-trim="false"
+                          autofocus></textarea>
+            </div>
+            <md-content class="pst-content reply-editor-preview-container" ng-show="ctrl.preview">
+                <div ng-if="ctrl.markdown" class="reply-editor-preview" markdown-to-html="ctrl.replyText | emptyChecker"></div>
+            </md-content>
+        </div>
+
+        <div ng-if="ctrl.markdown">
+          <div class="reply-editor-button-bar-separator" flex></div>
+          <md-button aria-label="{{'Preview' | translate}}" ng-if="!ctrl.preview" ng-click="enablePreview()">{{'Preview' | translate}}</md-button>
+          <md-button aria-label="{{'Edit' | translate}}" ng-if="ctrl.preview" ng-click="disablePreview()">{{'Edit' | translate}}</md-button>
+        </div>
+    </div>
+</div>

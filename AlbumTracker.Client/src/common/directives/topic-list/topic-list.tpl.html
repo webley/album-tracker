@@ -1,0 +1,19 @@
+<md-tabs md-border-bottom="true"
+         flex
+         md-selected="2">
+    <md-tab label="{{'List' | translate}}">
+        <pst-topic-list-m-d></pst-topic-list-m-d>
+    </md-tab>
+    <md-tab label="{{'Cards' | translate}}">
+        <pst-topic-list-cards></pst-topic-list-cards>
+    </md-tab>
+    <md-tab label="{{'Grid' | translate}}">
+        <pst-topic-list-grid></pst-topic-list-grid>
+    </md-tab>
+    <md-tab label="{{'Card grid' | translate}}">
+        <pst-topic-card-list-grid></pst-topic-card-list-grid>
+    </md-tab>
+    <md-tab label="{{'Favourite topics' | translate}}">
+        <pst-topic-list-editor topic-type="'task'" topics="ctrl.topics" submit="ctrl.submit();"></pst-topic-list-editor>
+    </md-tab>
+</md-tabs>

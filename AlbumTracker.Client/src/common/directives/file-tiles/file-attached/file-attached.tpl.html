@@ -1,0 +1,35 @@
+<md-grid-tile class="file-tile"
+              ng-repeat="file in fileAttached.viewModel.documents.fileAttachments | orderBy: 'fileName'"
+              md-rowspan="1"
+              md-colspan="1">
+
+    <div layout="column" flex class="md-whiteframe-z1 tile-content">
+        <div class="file-tile-header" layout-padding>
+            <div flex class="file-tile-title">
+                {{::file.fileName}}
+            </div>
+            <md-tooltip class="pst-file-list-tooltip">{{::file.fileName}}</md-tooltip>
+        </div>
+
+        <div flex layout="row" class="file-tile-content">
+            <md-icon flex class="md-primary fa fa-fw" pst-file-icon-class-selector="{{::file.fileName}}"></md-icon>
+            <div class="file-version">{{file.versions.length}}</div>
+        </div>
+        <div class="folder-tile-footer">
+            <md-menu>
+                <md-button flex ng-click="$mdOpenMenu($event)">
+                    <md-icon md-svg-icon="file:file_download"></md-icon>
+                    <md-tooltip class="pst-file-list-tooltip">{{'Download file' | translate}}</md-tooltip>
+                </md-button>
+                <md-menu-content width="6">
+                    <md-menu-item ng-repeat="version in file.versions | orderBy:'version':true">
+                        <md-button target="_blank" ng-href="{{fileAttached.getFileDownloadUrl(file, version.version)}}" translate>
+                            Version {{version.version}}
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </div>
+
+    </div>
+</md-grid-tile>

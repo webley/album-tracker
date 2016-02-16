@@ -1,0 +1,31 @@
+<md-content class="md-whiteframe-z2">
+    <div layout="column" class="pst-grid">
+        <div class="pst-header-row" layout="row" layout-align="start center">
+
+            <div ng-repeat="column in ctrl.columns track by $index" ng-class="::ctrl.columnClasses[$index]" flex>
+                <div ng-class="::{'pst-sortable': column.isSortable, 'pst-numerical': column.isNumerical}"
+                     ng-click="::(column.isSortable ? ctrl.sort(column.name) : return)">
+                    <span ng-class="{'pst-active-column': ctrl.sorting.field === column.name}">
+                        <span ng-bind="::column.label"></span>
+                        <md-icon ng-if="::column.isSortable"
+                                 ng-class="{'pst-descending': ctrl.sorting.order === 'desc'}"
+                                 md-svg-icon="navigation:arrow_drop_up"></md-icon>
+                    </span>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div layout="column">
+            <a target="{{::ctrl.target}}" pst-topic-sref pst-task-type="{{dataItem.taskType}}" pst-topic-code="{{dataItem.topicCode}}"
+            pst-task-id="{{dataItem.id}}" ng-repeat="dataItem in ctrl.filteredData" layout="row" class="pst-row"
+            layout-align="start center">
+
+                <div ng-repeat="column in ctrl.columns track by $index" ng-class="::ctrl.columnClasses[$index]" flex>
+                    <div ng-class="::({'pst-numerical': column.isNumerical})" ng-bind="::dataItem[column.name]"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</md-content>

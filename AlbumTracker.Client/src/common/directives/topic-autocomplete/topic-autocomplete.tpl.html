@@ -1,0 +1,34 @@
+<div>
+    <md-chips ng-model="topics"
+              md-autocomplete-snap
+              md-require-match="true"
+              readonly="disabled"
+              class="pst-icon-chips">
+        <md-autocomplete md-selected-item="selectedItem"
+                         md-search-text="searchText"
+                         md-items="item in searchQuery(searchText)"
+                         md-item-text="''"
+                         md-autoselect="true"
+                         md-no-cache="true"
+                         placeholder="{{label}}">
+            <md-item-template>
+                <span layout="row" class="autocomplete-result">
+                    <span flex md-highlight-text="searchText" class="topic-autocomplete-title">{{item.name}}</span>
+                    <span md-highlight-text="searchText">({{item.code}})</span>
+                </span>
+            </md-item-template>
+        </md-autocomplete>
+        <md-chip-template>
+            <span class="pst-chip-icon">
+                <span class="fa {{$chip.type | pstTopicTypeIcon}}"></span>
+            </span>
+            <span class="pst-chip-text">
+                <strong>{{$chip.name}}</strong>
+                <em>({{$chip.code}})</em>
+            </span>
+        </md-chip-template>
+        <button type="button" md-chip-remove class="md-chip-remove" ng-disabled="disabled">
+            <md-icon ng-if="!disabled" md-svg-icon="navigation:close"></md-icon>
+        </button>
+    </md-chips>
+</div>

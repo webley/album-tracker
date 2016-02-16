@@ -7,33 +7,17 @@ using System.Web.Http;
 using System.Web.Routing;
 using AlbumTracker.DataAccess.Implementation;
 using AlbumTracker.DataAccess.Interface;
+using AlbumTracker.WebApi.Controllers;
 using Ninject;
 using Ninject.Web.Common;
 
 namespace AlbumTracker.WebApi
 {
-    public class WebApiApplication : NinjectHttpApplication
+    public class WebApiApplication : HttpApplication
     {
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
-        }
-
-        protected override IKernel CreateKernel()
-        {
-            var kernel = new StandardKernel();
-            RegisterServices(kernel);
-            return kernel;
-        }
-
-        /// <summary>
-        /// Load your modules or register your services here.
-        /// </summary>
-        /// <param name="kernel">The kernel.</param>
-        private void RegisterServices(IKernel kernel)
-        {
-            kernel.Load(Assembly.GetExecutingAssembly());
-            kernel.Bind<IAlbumDataAccess, AlbumDataAccess>();
         }
     }
 }

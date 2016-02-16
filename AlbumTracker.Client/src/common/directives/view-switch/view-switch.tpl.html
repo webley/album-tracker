@@ -1,0 +1,32 @@
+<div layout="row" hide-sm>
+    <md-button ui-sref="{{view.state}}" ui-sref-active="md-primary" ng-repeat="view in ctrl.views">
+        <md-icon md-svg-icon="{{view.icon}}"></md-icon>
+        <md-tooltip>
+            {{view.tooltip}}
+        </md-tooltip>
+        <span>
+            {{view.label}}
+        </span>
+    </md-button>
+</div>
+<div hide-gt-sm="">
+    <md-menu>
+        <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+            <md-icon md-menu-origin md-svg-icon="navigation:more_vert"></md-icon>
+            <md-tooltip>{{'Select view'| translate}}</md-tooltip>
+        </md-button>
+        <md-menu-content width="4">
+            <md-menu-item ng-repeat="view in ctrl.views">
+                <md-button ui-sref="{{view.state}}" ui-sref-active="md-primary">
+                    <md-icon md-svg-icon="{{view.icon}}"></md-icon>
+                    <md-tooltip>
+                        {{view.tooltip}}
+                    </md-tooltip>
+                    <span>
+                        {{view.label}}
+                    </span>
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+</div>

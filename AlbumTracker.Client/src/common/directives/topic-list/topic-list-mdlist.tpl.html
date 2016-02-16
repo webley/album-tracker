@@ -1,0 +1,56 @@
+<md-list
+    class="md-whiteframe-z1">
+
+    <md-list-item
+        ng-repeat-start="topic in ::topicStatistic track by $index"
+        class="md-5-line">
+
+        <div class="md-list-item-text md-margin">
+            <md-button class="md-no-style"
+                       ui-sref="topic({topicCode:'{{::topic.topicCode}}'})">
+                <b>{{::topic.topicName}}</b><br />{{::topic.topicCode}}
+            </md-button>
+
+            <div layout="row" layout-wrap>
+                <md-button class="md-primary"
+                           ui-sref="topic({topicCode:'{{::topic.topicCode}}', state:'open'})"
+                           ng-if="::(topic.open > 0)">
+                    Open: {{::topic.open}}
+                </md-button>
+                <md-button class="md-primary"
+                           ui-sref="topic({topicCode:'{{::topic.topicCode}}', state:'unscheduled'})"
+                           ng-if="::(topic.unscheduled > 0)">
+                    Unscheduled: {{::topic.unscheduled}}
+                </md-button>
+                <md-button class="md-primary"
+                           ui-sref="topic({topicCode:'{{::topic.topicCode}}', state:'scheduled'})"
+                           ng-if="::(topic.scheduled > 0)">
+                    Scheduled: {{::topic.scheduled}}
+                </md-button>
+                <md-button class="md-primary"
+                           ui-sref="topic({topicCode:'{{::topic.topicCode}}', state:'workInProgress'})"
+                           ng-if="::(topic.workInProgress > 0)">
+                    Work in Progress: {{::topic.workInProgress}}
+                </md-button>
+                <md-button class="md-primary"
+                           ui-sref="topic({topicCode:'{{::topic.topicCode}}', state:'review'})"
+                           ng-if="::(topic.review > 0)">
+                    Review: {{::topic.review}}
+                </md-button>
+                <md-button class="md-primary"
+                           ui-sref="topic({topicCode:'{{::topic.topicCode}}', state:'complete'})"
+                           ng-if="::(topic.completed > 0)">
+                    Complete: {{::topic.completed}}
+                </md-button>
+                <md-button class="md-primary"
+                           ui-sref="topic({topicCode:'{{::topic.topicCode}}', state:'overdue'})"
+                           ng-if="::(topic.overdue > 0)">
+                    Overdue: {{::topic.overdue}}
+                </md-button>
+            </div>
+        </div>
+
+    </md-list-item>
+
+    <md-divider ng-repeat-end></md-divider>
+</md-list>

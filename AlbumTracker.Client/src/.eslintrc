@@ -1,0 +1,40 @@
+{
+    "root": true,
+
+    "plugins": [
+        "angular"
+    ],
+
+    "env": {
+        "browser": true,
+        "jquery": true
+    },
+    "extends": "eslint",
+
+    "rules": {
+        "angular/controller-name": [
+            2,
+            "/[A-Z].*Controller$/"
+        ],
+        "angular/controller-as-vm": [
+            1,
+            "that"
+        ],
+        "quotes": [
+            1,
+            "single",
+            "avoid-escape"
+        ],
+        "strict": [2, "function"],
+        "wrap-iife": [2, "inside"],
+        "space-before-function-paren": [1, "always"]
+
+    },
+
+    "globals": {
+        "_": false,
+        "s": false,
+        "angular": false,
+        "gettext": false
+    }
+}

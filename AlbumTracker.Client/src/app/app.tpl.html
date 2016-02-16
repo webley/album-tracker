@@ -1,0 +1,84 @@
+<md-sidenav class="pst-navbar md-whiteframe-z1"
+            md-component-id="navbar"
+            flex
+            layout="column"
+            md-is-locked-open="$mdMedia('gt-md')">
+    <md-content role="navigation">
+        <md-toolbar>
+            <div flex layout="row" layout-align="start center">
+                <div class="icon-PSTeam-Web-large"></div>
+            </div>
+        </md-toolbar>
+        <header class="pst-navbar-header md-body-1" layout="column" layout-align="center start">
+            <div layout="column">
+                <div layout="row" layout-align="start center">
+                    <div flex class="md-body-1">
+                        <div class="user-label">{{ctrl.user.fullName}}</div>
+                        <div class="email-label">{{ctrl.user.email}}</div>
+                    </div>
+                </div>
+                <div layout="row">
+                    <a translate ng-click="ctrl.closeSidenav('navbar'); ctrl.logOut()">LOGOUT</a>
+                    <a translate
+                       ui-sref="user({topic: null,page:null,pageSize:null,folders:null,docs:null,shares:null})"
+                       ng-click="ctrl.closeSidenav('navbar')">SETTINGS</a>
+                </div>
+            </div>
+        </header>
+        <md-list class="docs-menu">
+          <md-list-item ng-repeat="section in ctrl.menuSections">
+            <pst-menu-link style="width:100%" callback="ctrl.menuCallback" section="section" ng-if="section.type === 'link'"></pst-menu-link>
+            <pst-menu-toggle style="width:100%" callback="ctrl.closeMenus" child-callback="ctrl.menuCallback" section="section" ng-if="section.type === 'toggle'"></pst-menu-toggle>
+          </md-list-item>
+        </md-list>
+    </md-content>
+</md-sidenav>
+
+<div flex layout="column" tabindex="-1" role="main">
+    <md-toolbar class="pst-topbar md-whiteframe-z1" layout="row" layout-align="center center">
+        <md-button ng-click="ctrl.toggleSidenav()"
+                   class="md-icon-button hide-gt-md"
+                   aria-label="{{'Navigation' | translate}}">
+            <md-icon md-svg-icon="navigation:menu"></md-icon>
+        </md-button>
+        <div id="contextBarContainer"></div>
+
+        <!-- Expandable search for the smaller screens -->
+        <span flex></span>
+
+        <md-menu md-position-mode="target-right target" hide-gt-sm>
+            <md-button aria-label="{{'Search' | translate}}" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                <md-tooltip>{{'Search' | translate}}</md-tooltip>
+                <md-icon md-menu-origin md-svg-icon="action:search"></md-icon>
+            </md-button>
+            <md-menu-content width="4" style="padding:0px;overflow-y:hidden;" hide-gt-sm>
+                <md-menu-item>
+
+                        <form layout="row" class="md-body-1" ng-submit="ctrl.search()" layout-align="center center">
+                            <md-input-container md-no-float="true" class="top-bar-search-input">
+                                <input placeholder="{{'Search' | translate}}" flex id="pst-search-input" ng-model="ctrl.query"/>
+                            </md-input-container>
+                            <md-icon md-menu-align-target md-svg-icon="action:search"></md-icon>
+                        </form>
+
+
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+
+        <!-- Regular search for the larger screens -->
+        <form flex flex-xs="100" flex-sm="100" flex-gt-md="30" flex-gt-lg="20" layout="row"
+              ng-submit="ctrl.search()" layout-align="center center" class="md-body-1" hide show-gt-sm>
+            <md-icon md-svg-icon="action:search"></md-icon>
+            <md-input-container md-no-float="true" flex class="top-bar-search-input">
+                <input placeholder="{{'Search' | translate}}" id="pst-search-input" ng-model="ctrl.query"/>
+            </md-input-container>
+        </form>
+
+        <pst-new-task-button></pst-new-task-button>
+    </md-toolbar>
+    <md-progress-linear ng-if="ctrl.getProgressBar()" md-mode="indeterminate"></md-progress-linear>
+
+    <md-content class="pst-content " role="main" id="pst-main-content" flex layout="row" ui-view></md-content>
+
+</div>

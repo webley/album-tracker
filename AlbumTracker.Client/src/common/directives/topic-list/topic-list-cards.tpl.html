@@ -1,0 +1,45 @@
+<md-content class="pst-content md-padding">
+    <md-card ng-repeat="topic in ctrl.topicStatistics track by $index">
+        <md-card-content  layout="row">
+
+          <md-card-title flex="33">
+            <md-card-title-text>
+              <span ui-sref="topic({topicCode:'{{::topic.code}}'})"><b>{{::topic.name}}</b></span>
+              <span class="md-subhead">{{::topic.code}}</span>
+            </md-card-title-text>
+          </md-card-title>
+            <div flex="66" class="md-actions" layout="row" layout-wrap layout-align="center center">
+                <md-button  class="md-primary"
+                           ui-sref="topic({topicCode:'{{::topic.code}}', state:'open'})">
+                    Open: {{::topic.open}}
+                </md-button>
+                <md-button  class="md-primary"
+                           ui-sref="topic({topicCode:'{{::topic.code}}', state:'unscheduled'})"
+                           ng-if="::(topic.unscheduled > 0)">
+                    Unscheduled: {{::topic.unscheduled}}
+                </md-button>
+                <md-button  class="md-primary"
+                           ui-sref="topic({topicCode:'{{::topic.code}}', state:'scheduled'})"
+                           ng-if="::(topic.scheduled > 0)">
+                    Scheduled: {{::topic.scheduled}}
+                </md-button>
+                <md-button  class="md-primary"
+                           ui-sref="topic({topicCode:'{{::topic.code}}', state:'wip'})"
+                           ng-if="::(topic.wip > 0)">
+                    Work in Progress: {{::topic.wip}}
+                </md-button>
+                <md-button  class="md-primary"
+                           ui-sref="topic({topicCode:'{{::topic.code}}', state:'review'})"
+                           ng-if="::(topic.review > 0)">
+                    Review: {{::topic.review}}
+                </md-button>
+                <md-button  class="md-primary"
+                           ui-sref="topic({topicCode:'{{::topic.code}}', state:'complete'})"
+                           ng-if="::(topic.complete > 0)">
+                    Complete: {{::topic.complete}}
+                </md-button>
+            </div>
+        </md-card-content>
+
+    </md-card>
+</md-content>

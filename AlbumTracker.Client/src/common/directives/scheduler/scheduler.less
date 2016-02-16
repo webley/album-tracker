@@ -1,0 +1,53 @@
+pst-scheduler {
+    max-height: 100%;
+    height: 100%;
+    .pst-scheduler-toolbar, .pst-calendar-container {
+        background-color: white;
+    }
+    .hidden-calendar{
+    	position:absolute;
+    	opacity:0;
+    }
+    .ui-widget {
+        outline: none;
+        th,
+        td {
+            border-color: rgba(0, 0, 0, .12);
+        }
+        .fc-divider.ui-widget-header {
+            border-top: none;
+            border-color: rgba(0, 0, 0, .12);
+            padding: 0;
+        }
+        .fc-agenda-view {
+            .fc-head,
+            .fc-day-grid {
+                .fc-row {
+                    border-color: rgba(0, 0, 0, .12);
+                }
+            }
+        }
+
+        .fc {
+            td.fc-today {
+                border-style: single;
+            }
+        }
+    }
+    .ui-widget-header {
+        font-size: 12px;
+        color: rgba(0, 0, 0, .54);
+        font-weight: bold;
+    }
+    .ui-widget-content {
+        font-size: 13px;
+        color: rgba(0, 0, 0, .84);
+    }
+    .ui-state-highlight {
+    }
+    .header-row-item{
+        line-height:36px;
+        margin: 6px 8px;
+        white-space:nowrap;
+    }
+}

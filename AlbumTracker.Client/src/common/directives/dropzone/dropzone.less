@@ -1,0 +1,150 @@
+@icon-two-transform: ~"rotate(-0.1turn) translate(-40px, -40px)";
+@icon-three-transform: ~"rotate(0.1turn) translate(30px, -30px)";
+@icon-four-transform: ~"rotate(0.055turn) translate(-4px, -50px)";
+
+@keyframes slideInTwo {
+    from {
+        transform: none;
+    }
+
+    to {
+        transform: @icon-two-transform;
+    }
+}
+
+@keyframes slideInThree {
+    from {
+        transform: none;
+    }
+
+    to {
+        transform: @icon-three-transform;
+    }
+}
+
+@keyframes slideInFour {
+    from {
+        transform: none;
+    }
+
+    to {
+        transform: @icon-four-transform;
+    }
+}
+
+@keyframes dropzoneFadeIn {
+    from {
+        background-color: rgba(240, 240, 240, 0);
+    }
+
+    to {
+        background-color: rgba(240, 240, 240, 0.9);
+    }
+}
+
+@keyframes circlePulsate {
+    from {
+        width: 500px;
+        height: 500px;
+    }
+
+    50% {
+        width: 520px;
+        height: 520px;
+    }
+
+    to {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+.dropzone {
+    pointer-events: none;
+    min-height: 100%;
+    min-width:100%;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(240, 240, 240, 0.9);
+    z-index:5000;
+    display: flex;
+    flex:1;
+    box-sizing: border-box;
+
+    align-items: center;
+    justify-content: center;
+
+    animation-duration: 0.3s;
+    animation-name: dropzoneFadeIn;
+    animation-timing-function: linear;
+}
+
+.dropzone-circle {
+    animation-duration: 0.6s;
+    animation-name: circlePulsate;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(20, end);
+
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(68,138,255);
+    border-radius: 50%;
+    height: 500px;
+    width: 500px;
+
+    align-items: center;
+    justify-content: center;
+
+    .dropzone-icons {
+        min-height: 180px;
+        min-width: 300px;
+        position: relative;
+
+        md-icon {
+            width: 150px;
+            height: 150px;
+            color: rgba(150, 205, 255, 1);
+            top: 30px;
+            left: 75px;
+            position: absolute;
+
+            &.icon-one {
+                color: rgba(255, 255, 255, 1);
+            }
+
+            &.icon-two {
+                animation-duration: 1s;
+                animation-name: slideInTwo;
+                transform: @icon-two-transform;
+            }
+
+            &.icon-three {
+                animation-duration: 1s;
+                animation-name: slideInThree;
+                transform: @icon-three-transform;
+            }
+
+            &.icon-four {
+                animation-duration: 1s;
+                animation-name: slideInFour;
+                transform: @icon-four-transform;
+            }
+        }
+    }
+
+    .dropzone-text-header {
+        font-size: 29px;
+        color: #ffffff;
+        max-width: 300px;
+        text-align: center;
+    }
+
+    .dropzone-text-main {
+        font-size: 16px;
+        color: #ffffff;
+        max-width: 300px;
+        text-align: center;
+    }
+}
+
+

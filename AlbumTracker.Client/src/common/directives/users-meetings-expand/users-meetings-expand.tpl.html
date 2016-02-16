@@ -1,0 +1,16 @@
+<div class="user-meetings-card" ng-repeat="user in ctrl.users">
+  <md-card>
+    <div class="cardTitle" ng-click="ctrl.showOverlap(user)">
+      <span class="md-title">{{user}}</span>
+    </div>
+    <md-card-content ng-show="ctrl.showOverlaps[user]">
+      <pst-task-grid pst-on-sort="ctrl.onSort"
+                     pst-use-tab="true"
+                     pst-sorting="{field: ctrl.sortField, order: ctrl.order}"
+                     pst-data="ctrl.data[user]"
+                     pst-columns="ctrl.columns"
+                     pst-target-state="meeting_update"
+      ></pst-task-grid>
+    </md-card-content>
+  </md-card>
+</div>

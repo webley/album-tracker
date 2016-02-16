@@ -1,3 +1,7 @@
 obj/
 bin/
 packages/
+node_modules/
+debug/
+vendor/
+bower_components/

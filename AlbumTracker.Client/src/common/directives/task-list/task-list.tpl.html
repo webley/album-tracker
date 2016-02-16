@@ -1,0 +1,68 @@
+<div class="pst-task-list" layout="column">
+
+    <div layout="row" layout-align="end start">
+
+        <div layout-margin layout="row" class="ng-hide pst-options" ng-show="ctrl.showOptions">
+            <div layout="column">
+                <span>
+                    {{'Sort By:' | translate}}
+                </span>
+                <md-radio-group ng-model="ctrl.sorting.field" ng-change="ctrl.onSort()">
+                    <md-radio-button ng-repeat="item in ctrl.sortByItems.data" ng-value="item.field">{{item.label}}
+                    </md-radio-button>
+                </md-radio-group>
+            </div>
+
+            <div layout="column">
+                <span>
+                    {{'Order:' | translate}}
+                </span>
+                <md-radio-group ng-model="ctrl.sorting.order" ng-change="ctrl.onSort()">
+                    <md-radio-button ng-value="'desc'">{{'Descending' | translate}}</md-radio-button>
+                    <md-radio-button ng-value="'asc'">{{'Ascending' | translate}}</md-radio-button>
+                </md-radio-group>
+            </div>
+        </div>
+
+        <md-button aria-label="Sort By" class="md-icon-button" ng-click="ctrl.showOptions = !ctrl.showOptions">
+            <md-icon class="fa" ng-class="ctrl.showOptions ?  'fa-times' : 'fa-ellipsis-h'"></md-icon>
+        </md-button>
+    </div>
+
+    <div>
+        <div ng-repeat="dataItem in ctrl.data" class="md-whiteframe-1dp result">            
+            <div layout="row" layout-align="center start"  class="titleSection ">
+                <a class="titleLink" layout="row" layout-align="start center" pst-topic-sref pst-task-type="{{dataItem.task.taskType}}" pst-topic-code="{{dataItem.task.topicCode}}" pst-task-id="{{dataItem.task.id}}">
+                    <span class="icon fa fa-lg {{dataItem.task.taskType | pstTaskTypeIcon}} " />
+                    <span class="title" ng-bind-html="::((dataItem.highlightedTitle?dataItem.highlightedTitle:dataItem.task.title) | processSearchMatches)"></span>
+                </a>
+                <span flex></span>
+                <span hide show-gt-md class="date">{{::dataItem.task.updatedDate |date: 'short'}}</span>
+                <span hide show-md class="date">{{::dataItem.task.updatedDate |date: 'shortDate'}}</span>
+            </div>
+            <div class="dataSection" layout-align="start center" layout="row" layout-wrap>
+                <span>
+                    <span class="icon fa-hashtag fa" />{{dataItem.task.taskCode}}
+                </span>
+                <span hide show-gt-sm >
+                    <span class="icon fa-check-circle fa" title="{{'Status' | translate}}"/>{{dataItem.task.status | taskStatus}}
+                 </span>
+                <span hide show-gt-sm >
+                    <span class="icon fa-bar-chart fa" title="{{'Priority' | translate}}" />{{dataItem.task.priority | taskPriority}}
+                </span>
+                <span ng-if="dataItem.task.startDate" hide show-gt-sm >
+                    <span class="icon fa-hourglass-start fa" title="{{'Start Date' | translate}}" />{{::dataItem.task.startDate | startDue : 'shortDate'}}
+                </span>
+                <span ng-if="dataItem.task.dueDate" hide show-gt-sm>
+                    <span class="icon fa-hourglass-end fa" title="{{'Due Date' | translate}}" />{{::dataItem.task.dueDate | startDue : 'shortDate'}}
+                </span>
+                <span ng-if="dataItem.task.assignees.length > 0">
+                    <span class="icon fa-user fa" title="{{'Assignees' | translate}}" />{{dataItem.task.assignees | assignees:10 }}
+                </span>
+            </div>
+            <div class="replySection" ng-if="dataItem.highlightedReplyText !== null && dataItem.highlightedReplyText.length > 0" >
+                <span ng-bind-html="::(dataItem.highlightedReplyText | processSearchMatches)"></span>
+            </div>
+        </div>
+    </div>
+</div>

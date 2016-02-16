@@ -6,6 +6,6 @@
         public long AlbumId { get; set; }
         public string Name { get; set; }
         public int TrackNumber { get; set; }
-        public int LengthInMs { get; set; }
+        public int DurationMs { get; set; }
     }
 }

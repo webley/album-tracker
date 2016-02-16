@@ -1,0 +1,59 @@
+@import "../../less/variables.less";
+
+pst-meeting-list, pst-task-list {      
+    .result {
+        margin: 16px; 
+        padding: 16px; 
+        background-color: white;
+
+        .titleSection {
+            margin-bottom:8px;
+            .icon{
+                color: @text-dark-secondary;
+            }
+            .titleLink{            
+                .title{
+                    font-size: 18px;
+                    margin-left: 8px;
+                }
+            }
+            .date{
+                color: @text-dark-secondary;
+                white-space: nowrap;
+            }
+        }
+
+        .dataSection {
+            margin-bottom:8px;
+            color: @text-dark-secondary;
+            span {
+                margin-right: 16px;
+                .icon{
+                    margin-right: 8px;
+                }                
+            }
+        }
+
+        .replySection {
+            color: @text-dark-secondary;
+            border-top: 1px lightgrey solid; 
+            margin-bottom: 8px; 
+            padding-top: 8px
+        }
+    }
+    .pst-task-list {
+        .pst-options {
+            transition: all 0.5s ease-out;
+            max-width: 100%;
+            max-height: 300px;
+            z-index: 0;
+            opacity: 1;
+            overflow: hidden;
+            &.ng-hide {
+                opacity: 0;
+                overflow: hidden;
+                max-height: 0px;
+            }
+        }        
+    }
+}

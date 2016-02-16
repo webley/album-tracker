@@ -1,0 +1,75 @@
+<div layout="row" layout-align="center" layout-fill>
+    <div flex layout="column" layout-margin flex-gt-lg="90">
+        <div layout-margin layout="row" layout-align="space-between center" class="md-whiteframe-z2 pst-white-content">
+            <!--<pst-view-switch flex="100" layout="row" layout-align="end" pst-main-state-name="ctrl.mainStateName" pst-views="ctrl.views"></pst-view-switch>-->
+
+            <md-button class="md-icon-button" ng-click="ctrl.add();" ng-disabled="ctrl.added">
+                <md-tooltip>{{'Add new' | translate}} {{ctrl.topicTypes[ctrl.topicType]}}</md-tooltip>
+                <md-icon md-svg-icon="av:playlist_add"></md-icon>
+            </md-button>
+
+
+        </div>
+        <ng-form name="mainForm" class="task-form" layout="column" layout-margin>
+
+            <md-content>
+                <md-list>
+                    <md-list-item flex ng-repeat="topic in ctrl.topics" layout="row">
+                        <div class="md-list-item-text" layout-column layout-padding ng-if="!topic.edit">
+                            <a ng-href="{{ctrl.getHRef(topic)}}"
+                               >
+                                {{::topic.code}}: '{{::topic.name}}'
+                            </a>
+                        </div>
+                        <div class="md-list-item-text active" ng-if="topic.edit" layout="row">
+                            <label>{{'Select' | translate}} </label>
+                            <md-autocomplete
+                                             md-selected-item="topic.selectedItem"
+                                             md-search-text="topic.searchText"
+                                             md-items="item in ctrl.searchQuery(topic.searchText)"
+                                             md-item-text="item.name"
+                                             md-autoselect="true"
+                                             md-no-cache="true"
+                                             placeholder="{{ctrl.topicTypes[ctrl.topicType]}}">
+                                <md-item-template>
+                                    <span layout="row" class="autocomplete-result">
+                                        <span flex md-highlight-text="searchText" class="topic-autocomplete-title">{{item.name}}</span>
+                                        <span md-highlight-text="searchText">({{item.code}})</span>
+                                    </span>
+                                </md-item-template>
+                            </md-autocomplete>
+
+                            <ng-messages for="mainForm.nameText.$error" ng-if="mainForm.topicText.$dirty">
+                                <ng-message when="required" translate="">Please select a topic</ng-message>
+                            </ng-messages>
+
+
+                        </div>
+                        <div flex style="text-align: right">
+                            <md-button class="md-icon-button" ng-if="!topic.edit" ng-click="ctrl.edit(topic);">
+                                <md-tooltip>{{'Edit' | translate}}</md-tooltip>
+                                <md-icon md-svg-icon="editor:mode_edit"></md-icon>
+                            </md-button>
+                            <md-button class="md-icon-button" ng-if="!topic.edit" ng-click="ctrl.delete(topic);">
+                                <md-tooltip>{{'Delete' | translate}}</md-tooltip>
+                                <md-icon md-svg-icon="action:delete"></md-icon>
+                            </md-button>
+                            <md-button class="md-icon-button" ng-if="topic.edit" ng-disabled="!mainForm.$valid" ng-click="ctrl.save(topic);">
+                                <md-tooltip>{{'Save' | translate}}</md-tooltip>
+                                <md-icon md-svg-icon="content:save"></md-icon>
+                            </md-button>
+                            <md-button class="md-icon-button" ng-if="topic.edit" ng-click="ctrl.cancel(topic);">
+                                <md-tooltip>{{'Cancel' | translate}}</md-tooltip>
+                                <md-icon md-svg-icon="navigation:cancel"></md-icon>
+                            </md-button>
+                        </div>
+                        <hr/>
+                    </md-list-item>
+                </md-list>
+            </md-content>
+
+
+        </ng-form>
+
+    </div>
+</div>

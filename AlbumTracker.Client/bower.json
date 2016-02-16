@@ -1,0 +1,41 @@
+{
+  "name": "AlbumTracker",
+  "version": "0.1.0",
+  "description": "AlbumTracker",
+  "main": "src/index.html",
+  "authors": [
+    "webley"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-animate": "~1.4.8",
+    "angular-cookies": "~1.4.8",
+    "angular-dynamic-locale": "~0.1.27",
+    "angular-gettext": "~2.1.0",
+    "angular-i18n": "~1.4.8",
+    "angular-messages": "~1.4.8",
+    "angular-sanitize": "~1.4.8",
+    "angular-ui-calendar": "~1.0.0",
+    "angular-ui-router": "~0.2.13",
+    "font-awesome": "~4.5.0",
+    "md-date-time": "fastmuse/sc-date-time",
+    "ng-showdown": "*",
+    "signalr": "~2.2.0",
+    "timezone-js": "~0.4.13",
+    "underscore": "~1.8.3",
+    "underscore.string": "~3.1.1",
+    "angular-material": "~1.0.1",
+    "angular-chart.js": "~0.8.8"
+  }
+}
