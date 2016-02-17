@@ -162,6 +162,20 @@ gulp.task('less:debug:compile', function () {
 
 //endregion
 
+// region My hacks to copy all files
+
+gulp.task('copy-vendor', function() {
+    return gulp.src('./vendor/**')
+        .pipe(gulp.dest(debugOutputPath + '/vendor'));
+});
+
+gulp.task('copy-app', function() {
+    return gulp.src('./src/**')
+        .pipe(gulp.dest(debugOutputPath));
+});
+
+// endregion My Hack
+
 gulp.task('debug:clean', function () {
     return del('./debug/**/*');
 });
@@ -250,7 +264,9 @@ gulp.task('full-debug', function (callback) {
         ],
         [
             'less:debug',
-            'translations',
+            'copy-vendor',
+            'copy-app',
+            //'translations',
             'copy-angular-locale',
             'images',
             'debug:favicons:deploy'

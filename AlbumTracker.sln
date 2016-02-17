@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbumTracker.ApiModel", "Al
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbumTracker.WebApi", "AlbumTracker.WebApi\AlbumTracker.WebApi.csproj", "{76BBE71F-6F02-47AF-9CD4-6AEF1CF6A81C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbumTracker.Client.Host", "AlbumTracker.Client.Host\AlbumTracker.Client.Host.csproj", "{1D3E76E6-0796-41BF-9E2A-9C04C16854D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbumTracker.Client.Host", "AlbumTracker.Client.Host\AlbumTracker.Client.Host.csproj", "{6E937115-CF9D-481E-81F0-9239032A7B6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{76BBE71F-6F02-47AF-9CD4-6AEF1CF6A81C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76BBE71F-6F02-47AF-9CD4-6AEF1CF6A81C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76BBE71F-6F02-47AF-9CD4-6AEF1CF6A81C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1D3E76E6-0796-41BF-9E2A-9C04C16854D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1D3E76E6-0796-41BF-9E2A-9C04C16854D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1D3E76E6-0796-41BF-9E2A-9C04C16854D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1D3E76E6-0796-41BF-9E2A-9C04C16854D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E937115-CF9D-481E-81F0-9239032A7B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E937115-CF9D-481E-81F0-9239032A7B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E937115-CF9D-481E-81F0-9239032A7B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E937115-CF9D-481E-81F0-9239032A7B6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

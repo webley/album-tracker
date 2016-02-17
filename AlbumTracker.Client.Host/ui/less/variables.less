@@ -1,0 +1,72 @@
+@import "material-design-theme-intentions.less";
+
+/* Media Queries */
+@break-sm: ~"(max-width: 599px)";
+@break-gt-sm: ~"(min-width: 600px)";
+@break-md: ~"(min-width: 600px) and (max-width: 959px)";
+@break-gt-md: ~"(min-width: 960px)";
+@break-lg: ~"(min-width: 960px) and (max-width: 1199px)";
+@break-gt-lg: ~"(min-width: 1200px)";
+
+
+//used on light backgrounds;
+@opacity-dark-primary: 87%;
+@opacity-dark-secondary: 54%;
+@opacity-dark-disabled: 38%;
+
+@text-dark-primary: fade(@md-palette-black, @opacity-dark-primary);
+@text-dark-secondary: fade(@md-palette-black, @opacity-dark-secondary);
+
+//used on dark backgrounds;
+@opacity-light-primary: 100%;
+@opacity-light-secondary: 70%;
+@opacity-light-disabled: 30%;
+
+@text-light-primary: fade(@md-palette-white, @opacity-light-primary);
+@text-light-secondary: fade(@md-palette-white, @opacity-light-secondary);
+
+
+/* Colour Palette */
+/* Material Palette */
+@md-primary: @md-theme-intention-primary;
+@md-primary-hue-1: @md-theme-intention-primary-hue1;
+@md-primary-hue-2: @md-theme-intention-primary-hue2;
+@md-primary-hue-3: @md-theme-intention-primary-hue3;
+
+
+@md-accent: @md-theme-intention-accent;
+@md-accent-hue-1: @md-theme-intention-accent-hue1;
+@md-accent-hue-2: @md-theme-intention-accent-hue2;
+@md-accent-hue-3: @md-theme-intention-accent-hue3;
+
+
+@md-warn: @md-theme-intention-warn;
+@md-warn-hue-1: @md-theme-intention-warn-hue1;
+@md-warn-hue-2: @md-theme-intention-warn-hue2;
+@md-warn-hue-3: @md-theme-intention-warn-hue3;
+
+@md-background: @md-theme-intention-background;
+@md-background-hue-1: @md-theme-intention-background-hue1;
+@md-background-hue-2: @md-theme-intention-background-hue2;
+@md-background-hue-3: @md-theme-intention-background-hue3;
+
+
+@md-success: #8bc34a;
+
+@pageBackground: @md-theme-palette-background-100;
+@bottomButtonBarBackground: @md-theme-palette-background-100;
+
+@icon-colour-dashboard: #8bc34a;
+@icon-colour-projects: #00796b;
+@icon-colour-tasks: #8b45ae;
+@icon-colour-meetings: #53b9d1;
+@icon-colour-documents: #2196f3;
+@icon-colour-folders: #fbc02d;
+@icon-colour-supplychain: #795548;
+
+
+@update-taskcode-colour: @text-dark-secondary;
+
+@link-colour: @md-accent;
+@heading-colour: @md-primary;
+@page-titlebar-colour: @md-background;

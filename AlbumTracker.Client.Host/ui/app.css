@@ -1,0 +1,838 @@
+/*
+github style (specifically modified for javascript-matching by dmw)
+*/
+@import "app/hand-selector/hand-selector.css";
+@import "app/bower_components/angular/angular-csp.css";
+@import "app/bower_components/angular-material/angular-material.css";
+@import "app/bower_components/angular-material/angular-material.layouts.css";
+@import "app/bower_components/angular-material/angular-material.layouts.min.css";
+@import "app/bower_components/angular-material/angular-material.min.css";
+@import "app/components/card/card-directive.css";
+@import "app/bower_components/angular-material/modules/css/angular-material-layout.css";
+@import "app/bower_components/angular-material/modules/css/angular-material-layouts.css";
+@import "app/bower_components/html5-boilerplate/dist/css/main.css";
+@import "app/bower_components/html5-boilerplate/dist/css/normalize.css";
+@import "app/bower_components/html5-boilerplate/src/css/main.css";
+@import "app/bower_components/angular-material/modules/closure/autocomplete/autocomplete-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/autocomplete/autocomplete-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/autocomplete/autocomplete.css";
+@import "app/bower_components/angular-material/modules/closure/autocomplete/autocomplete.min.css";
+@import "app/bower_components/angular-material/modules/closure/backdrop/backdrop-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/backdrop/backdrop-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/backdrop/backdrop.css";
+@import "app/bower_components/angular-material/modules/closure/backdrop/backdrop.min.css";
+@import "app/bower_components/angular-material/modules/closure/checkbox/checkbox-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/checkbox/checkbox-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/checkbox/checkbox.css";
+@import "app/bower_components/angular-material/modules/closure/checkbox/checkbox.min.css";
+@import "app/bower_components/angular-material/modules/closure/button/button-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/button/button-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/button/button.css";
+@import "app/bower_components/angular-material/modules/closure/button/button.min.css";
+@import "app/bower_components/angular-material/modules/closure/bottomSheet/bottomSheet-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/bottomSheet/bottomSheet-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/bottomSheet/bottomSheet.css";
+@import "app/bower_components/angular-material/modules/closure/bottomSheet/bottomSheet.min.css";
+@import "app/bower_components/angular-material/modules/closure/card/card-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/card/card-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/card/card.css";
+@import "app/bower_components/angular-material/modules/closure/card/card.min.css";
+@import "app/bower_components/angular-material/modules/closure/content/content-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/content/content-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/content/content.css";
+@import "app/bower_components/angular-material/modules/closure/content/content.min.css";
+@import "app/bower_components/angular-material/modules/closure/chips/chips-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/chips/chips-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/chips/chips.css";
+@import "app/bower_components/angular-material/modules/closure/chips/chips.min.css";
+@import "app/bower_components/angular-material/modules/closure/datepicker/datepicker-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/datepicker/datepicker-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/datepicker/datepicker.css";
+@import "app/bower_components/angular-material/modules/closure/datepicker/datepicker.min.css";
+@import "app/bower_components/angular-material/modules/closure/core/core.css";
+@import "app/bower_components/angular-material/modules/closure/core/core.min.css";
+@import "app/bower_components/angular-material/modules/closure/dialog/dialog-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/dialog/dialog-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/dialog/dialog.css";
+@import "app/bower_components/angular-material/modules/closure/dialog/dialog.min.css";
+@import "app/bower_components/angular-material/modules/closure/divider/divider-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/divider/divider-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/divider/divider.css";
+@import "app/bower_components/angular-material/modules/closure/divider/divider.min.css";
+@import "app/bower_components/angular-material/modules/closure/fabSpeedDial/fabSpeedDial.css";
+@import "app/bower_components/angular-material/modules/closure/fabSpeedDial/fabSpeedDial.min.css";
+@import "app/bower_components/angular-material/modules/closure/fabToolbar/fabToolbar.css";
+@import "app/bower_components/angular-material/modules/closure/fabToolbar/fabToolbar.min.css";
+@import "app/bower_components/angular-material/modules/closure/icon/icon-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/icon/icon-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/icon/icon.css";
+@import "app/bower_components/angular-material/modules/closure/icon/icon.min.css";
+@import "app/bower_components/angular-material/modules/closure/gridList/gridList-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/gridList/gridList.css";
+@import "app/bower_components/angular-material/modules/closure/gridList/gridList.min.css";
+@import "app/bower_components/angular-material/modules/closure/menu/menu-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/menu/menu-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/menu/menu.css";
+@import "app/bower_components/angular-material/modules/closure/menu/menu.min.css";
+@import "app/bower_components/angular-material/modules/closure/list/list-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/list/list-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/list/list.css";
+@import "app/bower_components/angular-material/modules/closure/list/list.min.css";
+@import "app/bower_components/angular-material/modules/closure/input/input-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/input/input-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/input/input.css";
+@import "app/bower_components/angular-material/modules/closure/input/input.min.css";
+@import "app/bower_components/angular-material/modules/closure/menuBar/menuBar-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/menuBar/menuBar-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/menuBar/menuBar.css";
+@import "app/bower_components/angular-material/modules/closure/menuBar/menuBar.min.css";
+@import "app/bower_components/angular-material/modules/closure/progressCircular/progressCircular-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/progressCircular/progressCircular-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/progressCircular/progressCircular.css";
+@import "app/bower_components/angular-material/modules/closure/progressCircular/progressCircular.min.css";
+@import "app/bower_components/angular-material/modules/closure/progressLinear/progressLinear-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/progressLinear/progressLinear-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/progressLinear/progressLinear.css";
+@import "app/bower_components/angular-material/modules/closure/progressLinear/progressLinear.min.css";
+@import "app/bower_components/angular-material/modules/closure/radioButton/radioButton-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/radioButton/radioButton-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/radioButton/radioButton.css";
+@import "app/bower_components/angular-material/modules/closure/radioButton/radioButton.min.css";
+@import "app/bower_components/angular-material/modules/closure/select/select-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/select/select-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/select/select.css";
+@import "app/bower_components/angular-material/modules/closure/select/select.min.css";
+@import "app/bower_components/angular-material/modules/closure/sidenav/sidenav-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/sidenav/sidenav-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/sidenav/sidenav.css";
+@import "app/bower_components/angular-material/modules/closure/sidenav/sidenav.min.css";
+@import "app/bower_components/angular-material/modules/closure/slider/slider-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/slider/slider-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/slider/slider.css";
+@import "app/bower_components/angular-material/modules/closure/slider/slider.min.css";
+@import "app/bower_components/angular-material/modules/closure/sticky/sticky.css";
+@import "app/bower_components/angular-material/modules/closure/sticky/sticky.min.css";
+@import "app/bower_components/angular-material/modules/closure/subheader/subheader-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/subheader/subheader-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/subheader/subheader.css";
+@import "app/bower_components/angular-material/modules/closure/subheader/subheader.min.css";
+@import "app/bower_components/angular-material/modules/closure/tabs/tabs-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/tabs/tabs-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/tabs/tabs.css";
+@import "app/bower_components/angular-material/modules/closure/tabs/tabs.min.css";
+@import "app/bower_components/angular-material/modules/closure/textField/textField-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/textField/textField.css";
+@import "app/bower_components/angular-material/modules/closure/toast/toast-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/toast/toast-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/toast/toast.css";
+@import "app/bower_components/angular-material/modules/closure/toast/toast.min.css";
+@import "app/bower_components/angular-material/modules/closure/virtualRepeat/virtualRepeat.css";
+@import "app/bower_components/angular-material/modules/closure/virtualRepeat/virtualRepeat.min.css";
+@import "app/bower_components/angular-material/modules/closure/switch/switch-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/switch/switch-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/switch/switch.css";
+@import "app/bower_components/angular-material/modules/closure/switch/switch.min.css";
+@import "app/bower_components/angular-material/modules/closure/tooltip/tooltip-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/tooltip/tooltip-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/tooltip/tooltip.css";
+@import "app/bower_components/angular-material/modules/closure/tooltip/tooltip.min.css";
+@import "app/bower_components/angular-material/modules/closure/toolbar/toolbar-default-theme.css";
+@import "app/bower_components/angular-material/modules/closure/toolbar/toolbar-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/closure/toolbar/toolbar.css";
+@import "app/bower_components/angular-material/modules/closure/toolbar/toolbar.min.css";
+@import "app/bower_components/angular-material/modules/js/autocomplete/autocomplete-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/autocomplete/autocomplete-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/autocomplete/autocomplete.css";
+@import "app/bower_components/angular-material/modules/js/autocomplete/autocomplete.min.css";
+@import "app/bower_components/angular-material/modules/closure/whiteframe/whiteframe.css";
+@import "app/bower_components/angular-material/modules/closure/whiteframe/whiteframe.min.css";
+@import "app/bower_components/angular-material/modules/js/backdrop/backdrop-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/backdrop/backdrop-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/backdrop/backdrop.css";
+@import "app/bower_components/angular-material/modules/js/backdrop/backdrop.min.css";
+@import "app/bower_components/angular-material/modules/js/bottomSheet/bottomSheet-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/bottomSheet/bottomSheet-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/bottomSheet/bottomSheet.css";
+@import "app/bower_components/angular-material/modules/js/bottomSheet/bottomSheet.min.css";
+@import "app/bower_components/angular-material/modules/js/button/button-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/button/button-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/button/button.css";
+@import "app/bower_components/angular-material/modules/js/button/button.min.css";
+@import "app/bower_components/angular-material/modules/js/card/card-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/card/card-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/card/card.css";
+@import "app/bower_components/angular-material/modules/js/card/card.min.css";
+@import "app/bower_components/angular-material/modules/js/checkbox/checkbox-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/checkbox/checkbox-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/checkbox/checkbox.css";
+@import "app/bower_components/angular-material/modules/js/checkbox/checkbox.min.css";
+@import "app/bower_components/angular-material/modules/js/content/content-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/content/content-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/content/content.css";
+@import "app/bower_components/angular-material/modules/js/content/content.min.css";
+@import "app/bower_components/angular-material/modules/js/core/core.css";
+@import "app/bower_components/angular-material/modules/js/core/core.min.css";
+@import "app/bower_components/angular-material/modules/js/chips/chips-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/chips/chips-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/chips/chips.css";
+@import "app/bower_components/angular-material/modules/js/chips/chips.min.css";
+@import "app/bower_components/angular-material/modules/js/dialog/dialog-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/dialog/dialog-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/dialog/dialog.css";
+@import "app/bower_components/angular-material/modules/js/dialog/dialog.min.css";
+@import "app/bower_components/angular-material/modules/js/datepicker/datepicker-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/datepicker/datepicker-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/datepicker/datepicker.css";
+@import "app/bower_components/angular-material/modules/js/datepicker/datepicker.min.css";
+@import "app/bower_components/angular-material/modules/js/divider/divider-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/divider/divider-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/divider/divider.css";
+@import "app/bower_components/angular-material/modules/js/divider/divider.min.css";
+@import "app/bower_components/angular-material/modules/js/fabToolbar/fabToolbar.css";
+@import "app/bower_components/angular-material/modules/js/fabToolbar/fabToolbar.min.css";
+@import "app/bower_components/angular-material/modules/js/gridList/gridList.css";
+@import "app/bower_components/angular-material/modules/js/gridList/gridList.min.css";
+@import "app/bower_components/angular-material/modules/js/fabSpeedDial/fabSpeedDial.css";
+@import "app/bower_components/angular-material/modules/js/fabSpeedDial/fabSpeedDial.min.css";
+@import "app/bower_components/angular-material/modules/js/icon/icon-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/icon/icon-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/icon/icon.css";
+@import "app/bower_components/angular-material/modules/js/icon/icon.min.css";
+@import "app/bower_components/angular-material/modules/js/input/input-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/input/input-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/input/input.css";
+@import "app/bower_components/angular-material/modules/js/input/input.min.css";
+@import "app/bower_components/angular-material/modules/js/list/list-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/list/list-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/list/list.css";
+@import "app/bower_components/angular-material/modules/js/list/list.min.css";
+@import "app/bower_components/angular-material/modules/js/menu/menu-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/menu/menu-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/menu/menu.css";
+@import "app/bower_components/angular-material/modules/js/menu/menu.min.css";
+@import "app/bower_components/angular-material/modules/js/progressCircular/progressCircular-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/progressCircular/progressCircular-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/progressCircular/progressCircular.css";
+@import "app/bower_components/angular-material/modules/js/progressCircular/progressCircular.min.css";
+@import "app/bower_components/angular-material/modules/js/menuBar/menuBar-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/menuBar/menuBar-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/menuBar/menuBar.css";
+@import "app/bower_components/angular-material/modules/js/menuBar/menuBar.min.css";
+@import "app/bower_components/angular-material/modules/js/progressLinear/progressLinear-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/progressLinear/progressLinear-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/progressLinear/progressLinear.css";
+@import "app/bower_components/angular-material/modules/js/progressLinear/progressLinear.min.css";
+@import "app/bower_components/angular-material/modules/js/radioButton/radioButton-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/radioButton/radioButton-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/radioButton/radioButton.css";
+@import "app/bower_components/angular-material/modules/js/radioButton/radioButton.min.css";
+@import "app/bower_components/angular-material/modules/js/sidenav/sidenav-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/sidenav/sidenav-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/sidenav/sidenav.css";
+@import "app/bower_components/angular-material/modules/js/sidenav/sidenav.min.css";
+@import "app/bower_components/angular-material/modules/js/slider/slider-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/slider/slider-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/slider/slider.css";
+@import "app/bower_components/angular-material/modules/js/slider/slider.min.css";
+@import "app/bower_components/angular-material/modules/js/select/select-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/select/select-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/select/select.css";
+@import "app/bower_components/angular-material/modules/js/select/select.min.css";
+@import "app/bower_components/angular-material/modules/js/sticky/sticky.css";
+@import "app/bower_components/angular-material/modules/js/sticky/sticky.min.css";
+@import "app/bower_components/angular-material/modules/js/switch/switch-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/switch/switch-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/switch/switch.css";
+@import "app/bower_components/angular-material/modules/js/switch/switch.min.css";
+@import "app/bower_components/angular-material/modules/js/subheader/subheader-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/subheader/subheader-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/subheader/subheader.css";
+@import "app/bower_components/angular-material/modules/js/subheader/subheader.min.css";
+@import "app/bower_components/angular-material/modules/js/tabs/tabs-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/tabs/tabs-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/tabs/tabs.css";
+@import "app/bower_components/angular-material/modules/js/tabs/tabs.min.css";
+@import "app/bower_components/angular-material/modules/js/textField/textField-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/textField/textField-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/textField/textField.css";
+@import "app/bower_components/angular-material/modules/js/textField/textField.min.css";
+@import "app/bower_components/angular-material/modules/js/tooltip/tooltip-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/tooltip/tooltip-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/tooltip/tooltip.css";
+@import "app/bower_components/angular-material/modules/js/tooltip/tooltip.min.css";
+@import "app/bower_components/angular-material/modules/js/virtualRepeat/virtualRepeat.css";
+@import "app/bower_components/angular-material/modules/js/virtualRepeat/virtualRepeat.min.css";
+@import "app/bower_components/angular-material/modules/js/toast/toast-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/toast/toast-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/toast/toast.css";
+@import "app/bower_components/angular-material/modules/js/toast/toast.min.css";
+@import "app/bower_components/angular-material/modules/js/toolbar/toolbar-default-theme.css";
+@import "app/bower_components/angular-material/modules/js/toolbar/toolbar-default-theme.min.css";
+@import "app/bower_components/angular-material/modules/js/toolbar/toolbar.css";
+@import "app/bower_components/angular-material/modules/js/toolbar/toolbar.min.css";
+@import "app/bower_components/angular-material/modules/js/whiteframe/whiteframe.css";
+@import "app/bower_components/angular-material/modules/js/whiteframe/whiteframe.min.css";
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 16px;
+  color: #333;
+  background: #f7f7f7;
+  -webkit-text-size-adjust: none;
+}
+/* I added my own rule to highlight.pack.js to add this class */
+.hljs-class_keyword {
+  color: #ed6a43;
+}
+.hljs-console {
+  color: #795da3;
+}
+.hljs-comment,
+.diff .hljs-header {
+  color: #998;
+  font-style: italic;
+}
+.hljs-keyword,
+.css .rule .hljs-keyword,
+.hljs-winutils,
+.nginx .hljs-title,
+.hljs-request,
+.hljs-status {
+  color: #a71d5d;
+}
+.hljs-subst {
+  color: #333333;
+}
+.hljs-number,
+.hljs-hexcolor,
+.ruby .hljs-constant {
+  color: #0086b3;
+}
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-doctag,
+.tex .hljs-formula {
+  color: #183691;
+}
+.hljs-title,
+.hljs-id,
+.scss .hljs-preprocessor {
+  color: #795da3;
+}
+.hljs-list .hljs-keyword,
+.hljs-subst {
+  font-weight: normal;
+}
+.hljs-class .hljs-title,
+.hljs-type,
+.vhdl .hljs-literal,
+.tex .hljs-command {
+  color: #795da3;
+}
+.hljs-literal {
+  color: #0086b3;
+}
+.hljs-tag,
+.hljs-tag .hljs-title,
+.hljs-rule .hljs-property,
+.django .hljs-tag .hljs-keyword {
+  color: #000080;
+  font-weight: normal;
+}
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body,
+.hljs-name {
+  color: #008080;
+}
+.hljs-regexp {
+  color: #009926;
+}
+.hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.lisp .hljs-keyword,
+.clojure .hljs-keyword,
+.scheme .hljs-keyword,
+.tex .hljs-special,
+.hljs-prompt {
+  color: #990073;
+}
+.hljs-built_in {
+  color: #0086b3;
+}
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-pi,
+.hljs-doctype,
+.hljs-shebang,
+.hljs-cdata {
+  color: #999;
+  font-weight: bold;
+}
+.hljs-deletion {
+  background: #fdd;
+}
+.hljs-addition {
+  background: #dfd;
+}
+.diff .hljs-change {
+  background: #0086b3;
+}
+.hljs-chunk {
+  color: #aaa;
+}
+md-sidenav,
+md-sidenav.md-locked-open,
+md-sidenav.md-closed.md-locked-open-add-active {
+  min-width: 260px !important;
+  max-width: 260px !important;
+}
+md-sidenav md-content md-toolbar div {
+  padding-left: 16px;
+}
+.pst-navbar-header {
+  background-color: #616161;
+  padding: 16px;
+  min-height: 100px;
+  box-sizing: border-box;
+}
+.pst-navbar-header .user-label {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.pst-navbar-header .email-label {
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+.pst-navbar-header a {
+  font-size: 10.5px;
+  color: rgba(130, 177, 255, 0.87);
+  text-decoration: none;
+  cursor: pointer;
+  padding-right: 8px;
+  padding-top: 8px;
+  outline: 0;
+}
+.pst-navbar-toggle-button {
+  background-color: transparent;
+  border: none;
+  height: 38px;
+  margin: 16px;
+  width: 36px;
+}
+.pst-navbar {
+  background-color: #424242;
+}
+.pst-navbar md-toolbar {
+  background-color: #424242 !important;
+}
+.pst-navbar md-content {
+  background-color: inherit !important;
+}
+.pst-navbar md-list {
+  padding: 0;
+}
+.pst-navbar md-list md-list-item {
+  padding: 0 0 0 0;
+}
+.pst-navbar md-list md-list-item pst-menu-link,
+.pst-navbar md-list md-list-item pst-menu-toggle {
+  margin: 0;
+}
+.pst-navbar md-list md-list-item pst-menu-link .md-button,
+.pst-navbar md-list md-list-item pst-menu-toggle .md-button {
+  display: block;
+  margin: 0;
+  padding: 0 0 0 0;
+}
+.pst-navbar md-list md-list-item pst-menu-link .pst-navbar-icon,
+.pst-navbar md-list md-list-item pst-menu-toggle .pst-navbar-icon {
+  font-size: 20px;
+}
+.pst-navbar md-list md-list-item pst-menu-link md-icon,
+.pst-navbar md-list md-list-item pst-menu-toggle md-icon {
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 16px !important;
+  margin-right: 16px !important;
+}
+.pst-navbar md-list md-list-item pst-menu-link p,
+.pst-navbar md-list md-list-item pst-menu-toggle p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  font-weight: 500;
+}
+.pst-navbar .docs-menu,
+.pst-navbar .docs-menu ul {
+  list-style: none;
+  padding: 0 0 0 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.pst-navbar .docs-menu li {
+  margin: 0;
+}
+.pst-navbar .md-whiteframe-glow-z1 {
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 0px 2px 2px rgba(0, 0, 0, 0.098), 0px 0px 5px 1px rgba(0, 0, 0, 0.084);
+}
+.pst-navbar .docs-menu .md-button md-icon {
+  color: rgba(255, 255, 255, 0.7);
+}
+.pst-navbar .docs-menu button.md-button::-moz-focus-inner {
+  padding: 0;
+}
+.pst-navbar .menu-toggle-list {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  -webkit-transition: 0.75s cubic-bezier(0.35, 0, 0.25, 1);
+  -webkit-transition-property: height;
+  -moz-transition: 0.75s cubic-bezier(0.35, 0, 0.25, 1);
+  -moz-transition-property: height;
+  transition: 0.75s cubic-bezier(0.35, 0, 0.25, 1);
+  transition-property: height;
+}
+.pst-navbar .docs-menu .menu-toggle-list a.md-button {
+  display: block;
+  padding: 0 16px 0 56px;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  font-weight: 500;
+}
+.pst-navbar .md-button-toggle .md-toggle-icon {
+  display: block;
+  margin-left: auto;
+  speak: none;
+  vertical-align: middle;
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+}
+.pst-navbar .md-button-toggle .md-toggle-icon .md-toggle-icon-inner {
+  color: #e91e63;
+}
+.pst-navbar .md-button-toggle .md-toggle-icon.toggled {
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+}
+input::-ms-clear {
+  display: none;
+}
+.nav,
+.pagination,
+.carousel,
+.panel-title a {
+  cursor: pointer;
+}
+.grid-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+body {
+  background-color: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
+  overflow-y: hidden;
+}
+body,
+html,
+.app-content-view {
+  height: 100%;
+}
+.link {
+  cursor: pointer;
+}
+md-menu-item .md-button {
+  text-align: left;
+}
+.pst-info {
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-image: -webkit-linear-gradient(top, #428bca 0%, #2d6ca2 100%);
+  background-image: -o-linear-gradient(top, #428bca 0%, #2d6ca2 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#428bca), to(#2d6ca2));
+  background-image: linear-gradient(to bottom, #428bca 0%, #2d6ca2 100%);
+  color: white;
+}
+.pst-error {
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-image: -webkit-linear-gradient(top, #ca4742 0%, #a2322d 100%);
+  background-image: -o-linear-gradient(top, #ca4742 0%, #a2322d 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ca4742), to(#a2322d));
+  background-image: linear-gradient(to bottom, #ca4742 0%, #a2322d 100%);
+  color: white;
+}
+.pst-main-container {
+  position: relative;
+}
+md-tabs md-tab-content {
+  background-color: #f5f5f5 !important;
+}
+md-tabs md-tabs-wrapper {
+  background-color: #ffffff !important;
+}
+md-tabs md-tab[disabled] {
+  opacity: 0.5 !important;
+}
+a {
+  color: #448aff;
+  text-decoration: none;
+}
+md-content.pst-content {
+  background-color: #f5f5f5 !important;
+  box-sizing: border-box;
+}
+.pst-white-content {
+  background-color: white;
+}
+.hidden {
+  visibility: hidden;
+}
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.selectable {
+  -webkit-touch-callout: default;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: all;
+}
+a,
+input,
+textarea {
+  -webkit-touch-callout: default !important;
+  -webkit-user-select: text !important;
+  -khtml-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: all !important;
+}
+md-icon[md-svg-icon="file:folder"] {
+  color: #ffc107;
+}
+md-icon[md-svg-icon="editor:attach_file"] {
+  color: #08088A;
+}
+.documents-toolbar {
+  padding: 8px;
+  margin-bottom: 8px;
+}
+.documents-toolbar > * {
+  margin: 0px 8px 0px 8px;
+}
+.documents-toolbar-filter-area md-icon {
+  font-size: 24px;
+}
+.title-form .title-input-container {
+  padding: 0px 0px 0px 8px;
+}
+.advanced-search md-checkbox {
+  max-width: 150px;
+}
+.advanced-search pst-user-autocomplete,
+.advanced-search pst-topic-autocomplete,
+.advanced-search pst-task-autocomplete {
+  padding-bottom: 26px;
+}
+.pst-search-results-options {
+  background-color: #ffffff;
+}
+.top-bar-search-input {
+  margin: 0px !important;
+}
+.top-bar-search-input .md-errors-spacer {
+  display: none;
+}
+.pst-topbar {
+  background-color: #ffffff !important;
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+.pst-topbar md-icon {
+  color: #e91e63 !important;
+}
+.pst-topbar .pst-sidenav-toggle-button {
+  margin: auto;
+}
+/* Media Queries */
+/* Colour Palette */
+/* Material Palette */
+.md-chips .md-chip-input-container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 350px;
+}
+@media (max-width: 599px) {
+  .autocomplete-result {
+    font-size: 13px;
+  }
+}
+.task-autocomplete-title,
+.topic-autocomplete-title,
+.user-autocomplete-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pst-icon-chips .md-chip {
+  /*padding: 0;
+        margin:0;*/
+  padding-left: 0px;
+  margin-right: 8px;
+  margin-top: 12px;
+  margin-bottom: 0px;
+  display: inline-flex;
+  height: 26px;
+  line-height: 25px;
+}
+.pst-icon-chips .md-chip md-chip-template {
+  display: inline-flex;
+}
+.pst-icon-chips .md-chip .pst-chip-icon {
+  height: 24px;
+  width: 24px;
+  text-align: center;
+  border-radius: 12px;
+  background-color: #f5f5f5;
+  color: #555555;
+  float: left;
+  font-size: 16px;
+  line-height: 24px;
+  border: 1px solid #e0e0e0;
+}
+.pst-icon-chips .md-chip .pst-chip-icon .fa-user {
+  color: #8bc34a;
+}
+.pst-icon-chips .md-chip .pst-chip-icon .fa-users {
+  color: #00796b;
+}
+.pst-icon-chips .md-chip .pst-chip-icon .fa-user-secret {
+  color: #795548;
+}
+.pst-icon-chips .md-chip .pst-chip-icon .fa-list-alt {
+  color: #8b45ae;
+}
+.pst-icon-chips .md-chip .pst-chip-icon .fa-sitemap {
+  color: #00796b;
+}
+.pst-icon-chips .md-chip .pst-chip-icon .fa-archive {
+  color: #795548;
+}
+.pst-icon-chips .md-chip .pst-chip-icon .fa-file {
+  color: #2196f3;
+}
+.pst-icon-chips .md-chip .pst-chip-icon .fa-folder {
+  color: #fbc02d;
+}
+.pst-icon-chips .md-chip .pst-chip-icon .fa-calendar {
+  color: #53b9d1;
+}
+.pst-icon-chips .md-chip .pst-chip-icon .fa-files-o {
+  color: #2196f3;
+}
+.pst-icon-chips .md-chip .md-chip-remove-container {
+  position: absolute;
+  top: -4px;
+  right: -2px;
+  color: white;
+  fill: white;
+}
+.pst-icon-chips .md-chip.md-focused .pst-chip-icon {
+  background-color: #7986cb;
+  color: rgba(255, 255, 255, 0.8);
+}
+.pst-icon-chips .md-chip.md-focused a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+}
+.pst-icon-chips .md-chip.md-focused a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+.pst-icon-chips .md-chip .pst-chip-text {
+  margin-left: 8px;
+  font-size: 13px;
+}
+pst-file-select input[type="file"] {
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+}
+file-upload {
+  display: block;
+}
+.drag-over {
+  background: #dddddd !important;
+}
+.drag-over-window {
+  background: #444444;
+  border-color: #aaaaaa;
+}
+pst-meeting-list .result,
+pst-task-list .result {
+  margin: 16px;
+  padding: 16px;
+  background-color: white;
+}
+pst-meeting-list .result .titleSection,
+pst-task-list .result .titleSection {
+  margin-bottom: 8px;
+}
+pst-meeting-list .result .titleSection .icon,
+pst-task-list .result .titleSection .icon {
+  color: rgba(0, 0, 0, 0.54);
+}
+pst-meeting-list .result .titleSection .titleLink .title,
+pst-task-list .result .titleSection .titleLink .title {
+  font-size: 18px;
+  margin-left: 8px;
+}
+pst-meeting-list .result .titleSection .date,
+pst-task-list .result .titleSection .date {
+  color: rgba(0, 0, 0, 0.54);
+  white-space: nowrap;
+}
+pst-meeting-list .result .dataSection,
+pst-task-list .result .dataSection {
+  margin-bottom: 8px;
+  color: rgba(0, 0, 0, 0.54);
+}
+pst-meeting-list .result .dataSection span,
+pst-task-list .result .dataSection span {
+  margin-right: 16px;
+}
+pst-meeting-list .result .dataSection span .icon,
+pst-task-list .result .dataSection span .icon {
+  margin-right: 8px;
+}
+pst-meeting-list .result .replySection,
+pst-task-list .result .replySection {
+  color: rgba(0, 0, 0, 0.54);
+  border-top: 1px lightgrey solid;
+  margin-bottom: 8px;
+  padding-top: 8px;
+}
+pst-meeting-list .pst-task-list .pst-options,
+pst-task-list .pst-task-list .pst-options {
+  transition: all 0.5s ease-out;
+  max-width: 100%;
+  max-height: 300px;
+  z-index: 0;
+  opacity: 1;
+  overflow: hidden;
+}
+pst-meeting-list .pst-task-list .pst-options.ng-hide,
+pst-task-list .pst-task-list .pst-options.ng-hide {
+  opacity: 0;
+  overflow: hidden;
+  max-height: 0px;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImltcG9ydHMubGVzcyIsImxlc3MvaGlnaGxpZ2h0anMtdGhlbWUubGVzcyIsImxlc3MvbmF2YmFyLmxlc3MiLCJsZXNzL3BzdGVhbS5sZXNzIiwibGVzcy9zZWFyY2gubGVzcyIsImxlc3Mvc2VhcmNocmVzdWx0cy5sZXNzIiwibGVzcy90b3BiYXIubGVzcyIsImxlc3MvYXV0b2NvbXBsZXRlL2F1dG9jb21wbGV0ZS5sZXNzIiwibGVzcy9maWxlLXNlbGVjdC9maWxlLXNlbGVjdC5sZXNzIiwibGVzcy9maWxlLXVwbG9hZC9maWxlLXVwbG9hZC5sZXNzIiwibGVzcy90YXNrL3Rhc2stbGlzdC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztRQVVRO1FBS0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO1FBQ0E7UUFDQTtRQUNBO0FDdFJSO0VBQ0ksY0FBQTtFQUNBLGdCQUFBO0VBQ0EsYUFBQTtFQUNBLFdBQUE7RUFDQSxtQkFBQTtFQUNBLDhCQUFBOzs7QUFJSjtFQUNJLGNBQUE7O0FBR0o7RUFDSSxjQUFBOztBQUdKO0FB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 */

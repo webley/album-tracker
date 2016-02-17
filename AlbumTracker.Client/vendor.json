@@ -47,15 +47,6 @@
         ]
     },
     {
-        "source": "./vendor/other_vendor/gettext-global-marker",
-        "inject": [
-            "gettext-global-marker.js"
-        ],
-        "debug-inject": [
-            "gettext-global-marker.js"
-        ]
-    },
-    {
         "source": "./vendor/bower_components/showdown",
         "inject": [
             "dist/showdown.min.js"
@@ -215,24 +206,6 @@
         ]
     },
     {
-        "source": "./vendor/other_vendor/highlightjs",
-        "inject": [
-            "highlight.pack.js"
-        ],
-        "debug-inject": [
-            "highlight.pack.js"
-        ]
-    },
-    {
-        "source": "./vendor/other_vendor/dal",
-        "inject": [
-            "**/*.js"
-        ],
-        "debug-inject": [
-            "**/*.js"
-        ]
-    },
-    {
         "source": "./vendor/bower_components/sc-date-time",
         "inject": [
             "dist/sc-date-time.js",
@@ -261,15 +234,6 @@
         "debug-inject": [
             "angular-chart.js",
             "dist/angular-chart.css"
-        ]
-    },
-    {
-        "source": "./vendor/other_vendor/fonts",
-        "inject": [
-            "/roboto.css"
-        ],
-        "debug-inject": [
-            "/roboto.css"
         ]
     }
 ]

@@ -1,0 +1,145 @@
+@import "variables.less";
+
+//To disable IE input clear button
+input::-ms-clear {
+    display: none;
+}
+
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
+}
+
+.grid-nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+body {
+    background-color: @pageBackground;
+    font-family: 'Roboto', sans-serif;
+    overflow-y: hidden;
+}
+
+body, html, .app-content-view {
+    height: 100%;
+
+}
+
+.link {
+    cursor: pointer;
+}
+
+md-menu-item {
+    .md-button {
+        text-align: left;
+    }
+}
+
+.pst-info {
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background-image: -webkit-linear-gradient(top, #428bca 0%, #2d6ca2 100%);
+    background-image: -o-linear-gradient(top, #428bca 0%, #2d6ca2 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#428bca), to(#2d6ca2));
+    background-image: linear-gradient(to bottom, #428bca 0%, #2d6ca2 100%);
+    color: white;
+}
+
+.pst-error {
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background-image: -webkit-linear-gradient(top, #ca4742 0%, #a2322d 100%);
+    background-image: -o-linear-gradient(top, #ca4742 0%, #a2322d 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ca4742), to(#a2322d));
+    background-image: linear-gradient(to bottom, #ca4742 0%, #a2322d 100%);
+    color: white;
+}
+
+.pst-main-container {
+    position: relative;
+}
+
+md-tabs {
+    md-tab-content {
+        background-color: @pageBackground !important;
+    }
+    md-tabs-wrapper {
+        background-color: @page-titlebar-colour !important;
+    }
+    md-tab[disabled] {
+        opacity: 0.5 !important;
+    }
+}
+
+a {
+    color: @link-colour;
+    text-decoration: none;
+}
+
+md-content.pst-content {
+    background-color: @pageBackground !important;
+    box-sizing: border-box;
+}
+
+.pst-white-content{
+     background-color: white;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.selectable {
+    -webkit-touch-callout: default;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: all;
+}
+
+a, input, textarea {
+    -webkit-touch-callout: default !important;
+    -webkit-user-select: text !important;
+    -khtml-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: all !important;
+}
+
+md-icon[md-svg-icon="file:folder"] {
+    color: #ffc107;
+}
+
+md-icon[md-svg-icon="editor:attach_file"] {
+    color: #08088A;
+}
+
+.documents-toolbar {
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+.documents-toolbar > * {
+    margin: 0px 8px 0px 8px;
+}
+
+
+.documents-toolbar-filter-area md-icon {
+    font-size: 24px;
+}
+
+.title-form .title-input-container {
+    padding: 0px 0px 0px 8px;
+}
+
+

@@ -1,0 +1,27 @@
+.card {
+    height: 100%;
+}
+
+.card-outer {
+    display: flex;
+    height: 100%;
+    cursor: pointer;
+}
+
+.card-selected {
+    border: 1px #0077ee solid;
+    border-radius: 12px;
+    background-color: rgb(204, 234, 248);
+}
+
+.card-img {
+    width: 90%;
+    height: 90%;
+    display: block;
+    margin: auto;
+}
+
+.card-deck {
+    min-height: 100%;
+    height: 100%;
+}

@@ -1,7 +1,0 @@
-<div class="task-history">
-    <div class="reply-block md-body-1">
-        <div ng-repeat="reply in history.taskReplies | orderBy:'id':history.reverse track by reply.id" class="selectable">
-            <pst-task-reply-audit id="anchor{{reply.id}}" class="anchor" mode="mode" reply="::reply" template-name="task-update-audit"></pst-task-reply-audit>
-        </div>
-    </div>
-</div>
