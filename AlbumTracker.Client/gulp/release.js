@@ -265,8 +265,8 @@ gulp.task('index', function () {
 });
 
 gulp.task('icons.release', function () {
-    return gulp.src(['./vendor/other_vendor/fonts/**/*.*'])
-        .pipe(gulp.dest(outputVendorCssFolder));
+    return gulp.src(['./vendor/other_vendor/fonts/**/*.*']);
+        //.pipe(gulp.dest(outputVendorCssFolder));
 });
 
 gulp.task('fonts.release', function () {

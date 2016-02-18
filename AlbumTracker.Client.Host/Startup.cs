@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Web;
+using AlbumTracker.Client.Host;
 using Microsoft.Owin;
 using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.StaticFiles;
 using Owin;
 
+[assembly: OwinStartup(typeof(Startup))]
 namespace AlbumTracker.Client.Host
 {
     public class Startup
@@ -27,15 +25,6 @@ namespace AlbumTracker.Client.Host
             app.MapWhen(IsStaticFileRequest, spa =>
             {
                 spa.UseStaticFiles(fileOptions);
-
-                //spa.Use((context, next) =>
-                //{
-                //    context.Request.Path = new PathString("/index.html");
-                //
-                //    return next();
-                //});
-
-                
             });
 
             app.MapWhen(IsNotStaticFileRequest, spa =>

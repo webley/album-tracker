@@ -37,6 +37,9 @@ namespace AlbumTracker.Client.Host
 
             app.Use((context, next) =>
             {
+                var pathBase = context.Get<string>("owin.RequestPathBase");
+                string normalizedPathBase = '/' + (pathBase.Trim('/')) + '/';
+
                 context.Response.ContentType = "text/html";
                 //context.Response.Body = GenerateStreamFromString(CachedIndexFile);
                 context.Response.StatusCode = 200;

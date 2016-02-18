@@ -1,18 +1,16 @@
 (function() {
     'use strict';
     angular.module('app', [
-            'ui.router', 
+            'ui.router',
 			'ngSanitize',
             'ngMessages',
             'ngMaterial',
-            'app.controller',
 			'app.version',
 			'app.handSelector'
         ])
         .config(function($locationProvider,
             $stateProvider,
             $urlRouterProvider,
-            tmhDynamicLocaleProvider,
             $mdIconProvider,
             $mdThemingProvider,
             $urlMatcherFactoryProvider) {
@@ -26,7 +24,6 @@
                 .warnPalette('red');
 
 
-            $logProvider.debugEnabled(true);
             $stateProvider.state('app', {
                 templateUrl: 'app/app.tpl.html',
                 controller: function(){},
@@ -66,15 +63,13 @@
         })
         .run(function($state,
                 $rootScope) {
-                $rootScope.$state = $state;                
+                $rootScope.$state = $state;
 
                 $rootScope.$on('$stateNotFound', function(event, unfoundState, fromState, fromParams) {
-                    clientLogger.trace('app.run:$rootScope.$on("$stateNotFound")', event, unfoundState, fromState, fromParams);
                     console.error(event, unfoundState, fromState, fromParams);
                 });
 
                 $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
-                    clientLogger.trace('app.run:$rootScope.$on("$stateChangeError")', event, toState, toParams, fromState, fromParams, error);
                     console.error(event, toState, toParams, fromState, fromParams, error);
                 });
             }

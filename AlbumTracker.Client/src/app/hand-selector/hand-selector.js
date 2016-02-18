@@ -5,18 +5,18 @@
         'app.cardService',
         'app.cardDirective'])
 
-        .config(['$stateProvider', function($routeProvider) {
+        .config(['$stateProvider', function($stateProvider) {
 			$stateProvider.state('handSelector', {
 				parent: 'app',
-				url: '/handSelector',
-				onEnter: function (PageTitleService, task) {
-					PageTitleService.setPageTitle(task.title);
-				},
+				url: 'handSelector',
+				//onEnter: function (PageTitleService, task) {
+				//	PageTitleService.setPageTitle('Poker hand selector');
+				//},
 				controller: 'handSelectorController',
 				controllerAs: 'ctrl',
 				bindToController: true,
 				reloadOnSearch: false,
-				templateUrl: 'hand-selector/hand-selector.tpl.html'
+				templateUrl: 'app/hand-selector/hand-selector.tpl.html'
 			});
         }])
 

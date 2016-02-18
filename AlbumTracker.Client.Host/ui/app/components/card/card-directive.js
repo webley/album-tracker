@@ -11,10 +11,10 @@
                     selected: '&'
                 },
                 bindToController: true,
-                templateUrl: 'components/card/card-directive.tpl.html',
+                templateUrl: 'app/components/card/card-directive.tpl.html',
                 controller: function($scope) {
                     //this.cardValue = $scope.cardValue;
-                    this.imgLoc = 'assets/cards/' + this.cardValue + '.svg';
+                    this.imgLoc = 'app/assets/cards/' + this.cardValue + '.svg';
                 },
                 link: function link(scope, element, attrs) {
                     //scope.ctrl.cardValue = scope.cardValue;

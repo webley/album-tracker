@@ -86,8 +86,7 @@ gulp.task('exporttranslations', function () {
         'src/index.html',
         'src/app/**/*.js',
         'src/common/**/*.js',
-        'src/common/**/*.tpl.html',
-        'vendor/other_vendor/dal/**/*.*'
+        'src/common/**/*.tpl.html'
     ])
         .pipe(gettext.extract('template.pot', {
             // options to pass to angular-gettext-tools...
